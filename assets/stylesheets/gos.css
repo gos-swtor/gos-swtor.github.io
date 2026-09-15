@@ -1,0 +1,28 @@
+/* Documentation-only styling; no remote fonts, scripts or trackers. */
+:root { --md-text-font: system-ui, -apple-system, "Segoe UI", sans-serif; --md-code-font: "Cascadia Code", Consolas, monospace; }
+[data-md-color-scheme="slate"] { --md-default-bg-color: #11171d; --md-default-fg-color: #dce6ed; --md-default-fg-color--light: #9fb0bd; --md-code-bg-color: #0b1117; --md-primary-fg-color: #12232b; --md-accent-fg-color: #67dfcb; --md-typeset-a-color: #70dfcf; }
+[data-md-color-scheme="default"] { --md-primary-fg-color: #173e46; --md-accent-fg-color: #087d72; --md-typeset-a-color: #08776f; }
+.md-header { box-shadow: 0 1px 0 #7aa4b622; }
+.md-header__title { font-weight: 650; letter-spacing: -.025em; }
+.md-grid { max-width: 1540px; }
+.md-typeset { font-size: .82rem; line-height: 1.7; }
+.md-typeset h1 { font-weight: 750; letter-spacing: -.045em; color: var(--md-default-fg-color); margin-bottom: .7em; }
+.md-typeset h2 { font-weight: 650; letter-spacing: -.025em; }
+.md-typeset h3 { font-weight: 620; }
+.md-typeset code { border-radius: 4px; font-size: .84em; }
+.md-typeset pre > code { border: 1px solid #7c9fb526; border-radius: 10px; padding: 1.1rem; }
+.md-typeset .md-button { border-radius: 7px; font-size: .74rem; padding: .65em 1.25em; margin: .2rem .4rem .2rem 0; }
+.md-typeset .md-button--primary { background: #2f9e8f; border-color: #2f9e8f; color: #071b19; }
+.md-typeset .grid.cards > ul > li { border-radius: 10px; border: 1px solid #7c9fb533; padding: 1.15rem; }
+.md-typeset table:not([class]) { border-radius: 8px; font-size: .72rem; }
+.md-nav__link { font-size: .65rem; }
+.md-nav__title { font-weight: 700; }
+.gos-kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .6rem; font-weight: 700; color: var(--md-typeset-a-color); }
+.gos-lead { font-size: 1.2rem; line-height: 1.45; max-width: 32rem; color: var(--md-default-fg-color--light); }
+[data-md-color-scheme="slate"] .md-footer-meta { background: var(--md-code-bg-color); }
+@media (min-width: 1220px) { .md-sidebar--primary { width: 14rem; } .md-content { min-width: 0; } }
+@media (max-width: 760px) { .md-typeset h1 { font-size: 1.8rem; } .gos-lead { font-size: 1rem; } }
+
+.md-typeset .md-button:not(.md-button--primary) { color: var(--md-typeset-a-color); border-color: var(--md-typeset-a-color); }
+.md-typeset .grid.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) { .md-typeset .grid.cards { grid-template-columns: minmax(0, 1fr); } }
