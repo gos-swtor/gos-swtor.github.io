@@ -27,7 +27,7 @@
     
     
       
-        <title>gos.events.combat - GoS-SWTOR Lua Docs</title>
+        <title>gos.events.combat - GoS-SWTOR Lua Docs v1.0.0</title>
       
     
     
@@ -95,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="GoS-SWTOR Lua Docs" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -109,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GoS-SWTOR Lua Docs
+            GoS-SWTOR Lua Docs v1.0.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -194,13 +194,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="GoS-SWTOR Lua Docs" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    GoS-SWTOR Lua Docs
+    GoS-SWTOR Lua Docs v1.0.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -4700,6 +4700,7 @@
                   
 
 <h1 id="goseventscombat">gos.events.combat<a class="headerlink" href="#goseventscombat" title="Permanent link">&para;</a></h1>
+<p><strong>API version: <code>1.0.0</code></strong></p>
 <p>Consume ordered combat events using a retained cursor, with loss and backlog reporting.</p>
 <h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gos.events.combat(cursor)
@@ -4749,16 +4750,18 @@ stale cursor could read them.</p>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  target_name = string | nil,
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  actor_epoch = "actors:..." | nil,
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  ability_handle = "ability:..." | nil,
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  effect_handle = "effect:..." | nil,
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  name = string | nil,
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  amount = number | nil,
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  effective_amount = number | nil,
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  damage_type = string | nil,
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  critical = boolean | nil,
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  timestamp = integer | nil
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>}
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  definition_id = "0xE000..." | nil,
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  effect_handle = "effect:..." | nil,
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  name = string | nil,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  amount = number | nil,
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  effective_amount = number | nil,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  damage_type = string | nil,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  critical = boolean | nil,
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  timestamp = integer | nil
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>}
 </code></pre></div>
 <p><code>name</code> is not emitted for effect-kind events. Do not build buff-name matching around <code>event.name</code>; use the documented effect queries for current effect observations. Event timestamps are monotonic milliseconds, not Unix timestamps.</p>
+<p>Ability-bearing event rows may expose <code>definition_id</code>, SWTOR's public ability Global ID, rendered as an exact 64-bit hexadecimal string such as <code>0xE000...</code>. Use it for stable external catalogs such as Jedipedia/StarParse mappings. It is not a Core node ID, pointer, producer sequence, or opaque ability handle, and it may be absent when the event does not carry a public ability definition.</p>
 <p>Actor names are optional, verified display labels for their respective handles.
 They are immutable event snapshots, not grouping keys. Separate actors with the
 same name must remain separate. Absence of a name never means absence of damage.
