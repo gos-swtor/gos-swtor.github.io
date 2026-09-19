@@ -779,6 +779,8 @@
       
         
       
+        
+      
     
     
     
@@ -1285,6 +1287,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../unit-speed/" class="md-nav__link">
         
   
@@ -1611,6 +1640,8 @@
       
         
       
+        
+      
     
     
     
@@ -1666,6 +1697,33 @@
     
   
   Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
 
     
   </span>
@@ -4809,6 +4867,12 @@ request fails closed. <code>screen</code> anchors are not valid for unit-to-unit
 supports <code>font_size</code> and <code>shadow</code>. Rectangles support <code>filled</code>, <code>fill_color</code>,
 <code>rounding</code>, and optional border fields. Bars clamp <code>value</code> to <code>0..1</code>. Images use
 their texture size when width or height is omitted.</p>
+<p>Image paths must remain inside the active script application's approved
+filesystem roots. Relative paths use <code>SCRIPT_PATH</code>; <code>SPRITE_PATH</code> is suitable for
+packaged images. Network-share, device and URL paths, or resolved paths escaping
+the approved roots, are rejected by image loading. Path validation and decoding
+run on an image worker; a successful drawing submission does not prove that an
+image was decoded or displayed.</p>
 <p>World-space circles must be unfilled and use game-world coordinate units. They
 may be anchored either to a current unit or to an explicit captured world
 position. A position-backed circle is independent of later unit visibility, so

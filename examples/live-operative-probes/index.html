@@ -777,6 +777,8 @@
       
         
       
+        
+      
     
     
     
@@ -1283,6 +1285,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/unit-speed/" class="md-nav__link">
         
   
@@ -1609,6 +1638,8 @@
       
         
       
+        
+      
     
     
     
@@ -1664,6 +1695,33 @@
     
   
   Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
 
     
   </span>
@@ -4689,7 +4747,7 @@
 
 <h1 id="operative-maintain-kolto-probe-stacks">Operative: maintain Kolto Probe stacks<a class="headerlink" href="#operative-maintain-kolto-probe-stacks" title="Permanent link">&para;</a></h1>
 <p><strong>Live-script excerpt</strong> - from <code>operative_medicine.lua</code>, used by the project's live-tested scripts. The functions below are copied unchanged.</p>
-<p>This is the Medicine route's actual Kolto Probe refresh decision: first build the configured stack count, then refresh an expiring HoT, and never interpret an unavailable observation as a missing HoT.</p>
+<p>This is a per-unit Kolto Probe refresh helper from the Medicine module: it nominates a missing stack or an expiring HoT. It is not the route's complete healing scheduler and does not give HoT maintenance priority over an endangered patient. An unavailable observation is not evidence of a missing HoT.</p>
 <p><a href="../code/live-operative-probes.lua">View or save the excerpt</a></p>
 <div class="admonition note">
 <p class="admonition-title">Integration fragment, not a standalone rotation</p>

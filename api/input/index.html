@@ -16,7 +16,7 @@
         <link rel="prev" href="../symbols/unit-effects/">
       
       
-        <link rel="next" href="../symbols/gos-input-is-down/">
+        <link rel="next" href="../symbols/gos-input-cursor/">
       
       
         
@@ -779,6 +779,8 @@
       
         
       
+        
+      
     
     
     
@@ -1285,6 +1287,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../symbols/unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../symbols/unit-speed/" class="md-nav__link">
         
   
@@ -1613,6 +1642,8 @@
       
         
       
+        
+      
     
     
     
@@ -1671,6 +1702,23 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -1687,6 +1735,75 @@
 
       </a>
       
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-and-button-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Key and button state
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gosinputcursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.input.cursor()</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbols/gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4541,6 +4658,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-and-button-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Key and button state
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gosinputcursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.input.cursor()</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4555,6 +4702,7 @@
                   
 
 <h1 id="keyboard-and-mouse">Keyboard and mouse<a class="headerlink" href="#keyboard-and-mouse" title="Permanent link">&para;</a></h1>
+<h3 id="key-and-button-state">Key and button state<a class="headerlink" href="#key-and-button-state" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">gos</span><span class="p">.</span><span class="py">input</span><span class="p">.</span><span class="nf">is_down</span><span class="p">(</span><span class="nv">button</span><span class="p">)</span><span class="w">       </span><span class="c1">-- boolean</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">gos</span><span class="p">.</span><span class="py">input</span><span class="p">.</span><span class="nf">was_pressed</span><span class="p">(</span><span class="nv">button</span><span class="p">)</span><span class="w">   </span><span class="c1">-- boolean for this update</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">gos</span><span class="p">.</span><span class="py">input</span><span class="p">.</span><span class="nf">was_released</span><span class="p">(</span><span class="nv">button</span><span class="p">)</span><span class="w">  </span><span class="c1">-- boolean for this update</span>
@@ -4577,6 +4725,69 @@ letters, and <code>f1</code> through <code>f12</code>. Unknown string names and 
 <p>Canonical single-digit strings are keyboard keys: <code>"5"</code> means the 5 key, not virtual-key value 5. Use <code>"vk:5"</code> or integer <code>5</code> for that numeric virtual key. Canonical names and aliases are case-insensitive.</p>
 <p>Input edges are shared snapshot values and are not consumed by reading them.</p>
 <p>Press/release edges belong to the current update; they are not accumulated separately for a throttled callback. A callback using <code>interval_ms</code> can miss an edge between its runs. Process edge-driven actions every update, or deliberately use held-state semantics instead. <code>known</code> identifies a recognized button argument, not a guarantee that a current input sample was available.</p>
+<h3 id="gosinputcursor"><code>gos.input.cursor()</code><a class="headerlink" href="#gosinputcursor" title="Permanent link">&para;</a></h3>
+<p>Read the latest prepared cursor sample in render-viewport pixels inside
+<code>gos.on_tick</code>. This is a read-only query: it does not register an interaction
+rectangle, capture input, move the pointer, select a target, or cast an ability.
+It accepts no arguments; extra arguments, including an explicit nil, raise a
+Lua argument error.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  available = boolean,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  x = number | nil,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  y = number | nil,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  width = integer | nil,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  height = integer | nil
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>}
+</code></pre></div>
+<p>When <code>available</code> is true, <code>x</code> and <code>y</code> are cursor coordinates and <code>width</code> and
+<code>height</code> are the positive render-viewport dimensions. The origin is the top-left;
+X increases rightwards and Y increases downwards. Coordinates are in the same
+pixel space as <a href="../world/#unitscreen_positionanchor">unit screen anchors</a> and
+screen-space overlay drawings, not desktop coordinates or game-world units.
+The cursor sample is quantized to whole pixels, returned as Lua numbers.</p>
+<p>When unavailable, the result contains only <code>{ available = false }</code>. All four
+coordinate/dimension fields are omitted; they are not zero-valued substitutes.
+This includes a missing render/input sample, no foreground game focus, a cursor
+outside the viewport, an open GoS menu, GoS text or hotkey capture, a GoS
+interaction rectangle under the pointer, or while either the left or right mouse button is held, including mouse-look
+drags. Read viewport size independently through
+<a href="../overlay/#gosoverlayviewport">gos.overlay.viewport()</a> when cursor input is
+unavailable.</p>
+<p><strong>Availability is not a game-UI focus check.</strong> SWTOR chat, inventory and other
+native UI controls are not identified by this API. Reading the cursor or a key
+does not consume that key or prevent the game from acting on the same binding.
+An action hotkey therefore needs a deliberate input policy; do not treat
+<code>available = true</code> as permission to cast while typing in chat.</p>
+<p>The sample is prepared by rendering; this call does not force a new input or
+projection update and does not promise that separate reads share a frame token.
+Do not reuse an earlier available sample to make a later gameplay decision after
+the current sample becomes unavailable.</p>
+<p>This display-only example marks the current target when its projected center
+is within a 120-pixel cursor radius. It does not change the selected target.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">gos</span><span class="p">.</span><span class="nf">on_tick</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">input</span><span class="p">.</span><span class="py">cursor</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gos</span><span class="p">.</span><span class="py">input</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">cursor</span><span class="p">.</span><span class="py">available</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gos</span><span class="p">.</span><span class="nf">world</span><span class="p">()</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">world</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">world</span><span class="p">.</span><span class="py">current_target</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">unit</span><span class="p">.</span><span class="py">screen_position</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">unit</span><span class="p">:</span><span class="nf">screen_position</span><span class="p">(</span><span class="s2">"center"</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">dx</span><span class="p">,</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">cursor</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">cursor</span><span class="p">.</span><span class="py">y</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">dx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">dx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="nf">draw_circle</span><span class="p">(</span><span class="s2">"cursor_target"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nv">anchor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"screen"</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="nv">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="kr">end</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>For nearest-unit selection, compare squared pixel distances across a bounded
+set of freshly captured, explicitly filtered units. Projection alone does not
+prove that a unit is alive, friendly, in ability range, in line of sight, or a
+legal ability target. Keep those checks separate from screen proximity.
+Older Core builds may not provide these two methods; the example checks their
+existence and takes no action when either is absent.</p>
 
 
 

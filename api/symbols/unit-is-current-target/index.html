@@ -781,6 +781,8 @@
       
         
       
+        
+      
     
     
     
@@ -1408,6 +1410,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../unit-speed/" class="md-nav__link">
         
   
@@ -1734,6 +1763,8 @@
       
         
       
+        
+      
     
     
     
@@ -1789,6 +1820,33 @@
     
   
   Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
 
     
   </span>
@@ -4822,6 +4880,10 @@ match.</p>
 <td>Boolean from the current prepared render snapshot</td>
 </tr>
 <tr>
+<td><code>unit:screen_position(anchor?)</code></td>
+<td><code>{x, y}</code> in render-viewport pixels, or <code>nil</code>; <code>top</code>, <code>center</code> (default), <code>bottom</code></td>
+</tr>
+<tr>
 <td><code>unit:hp()</code></td>
 <td>Health table or <code>nil</code></td>
 </tr>
@@ -4855,6 +4917,10 @@ match.</p>
 may expose a combat style while their current discipline is unavailable.
 <code>gos.abilities.loadout()</code> is the local-player source for exact selected ability
 membership.</p>
+<p>For remote players, a previously coherent discipline may remain available
+during a temporary acquisition gap; conflicting discipline evidence or a style
+change clears that retained value. There is no separate discipline freshness
+field. A display label is not proof of another player's complete learned kit.</p>
 <p><code>percent</code> is on the 0..100 scale, not a 0..1 ratio. For healing thresholds, validate <code>max &gt; 0</code> and compare <code>current / max</code> or use <code>percent</code> consistently.</p>
 <p>Health shape:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{

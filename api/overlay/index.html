@@ -779,6 +779,8 @@
       
         
       
+        
+      
     
     
     
@@ -1285,6 +1287,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../symbols/unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../symbols/unit-speed/" class="md-nav__link">
         
   
@@ -1611,6 +1640,8 @@
       
         
       
+        
+      
     
     
     
@@ -1666,6 +1697,33 @@
     
   
   Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbols/gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
 
     
   </span>
@@ -4791,6 +4849,12 @@ request fails closed. <code>screen</code> anchors are not valid for unit-to-unit
 supports <code>font_size</code> and <code>shadow</code>. Rectangles support <code>filled</code>, <code>fill_color</code>,
 <code>rounding</code>, and optional border fields. Bars clamp <code>value</code> to <code>0..1</code>. Images use
 their texture size when width or height is omitted.</p>
+<p>Image paths must remain inside the active script application's approved
+filesystem roots. Relative paths use <code>SCRIPT_PATH</code>; <code>SPRITE_PATH</code> is suitable for
+packaged images. Network-share, device and URL paths, or resolved paths escaping
+the approved roots, are rejected by image loading. Path validation and decoding
+run on an image worker; a successful drawing submission does not prove that an
+image was decoded or displayed.</p>
 <p>World-space circles must be unfilled and use game-world coordinate units. They
 may be anchored either to a current unit or to an explicit captured world
 position. A position-backed circle is independent of later unit visibility, so
@@ -4838,6 +4902,11 @@ most 259 bytes. Oversized drawing IDs, text and image paths are truncated, not r
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
 </code></pre></div>
 <p>No guessed dimensions are returned when <code>available=false</code>.</p>
+<p>For a read-only pointer sample in this pixel space, use
+<a href="../input/#gosinputcursor">gos.input.cursor()</a>. For a unit's projected anchor, use
+<a href="../world/#unitscreen_positionanchor">unit:screen_position()</a>. Neither query
+registers an interaction rectangle. Viewport availability alone does not imply
+that cursor input is available.</p>
 <h3 id="gosoverlayinteractid-rect"><code>gos.overlay.interact(id, rect)</code><a class="headerlink" href="#gosoverlayinteractid-rect" title="Permanent link">&para;</a></h3>
 <p>Requires an active script callback. An empty or over-31-byte ID, invalid rectangle, nonpositive TTL, or wrong arguments raise a Lua error. Unlike ordinary draw IDs, interaction IDs are validated rather than truncated. Registers a temporary screen rectangle and returns left-mouse interaction:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>local state = gos.overlay.interact("button", {

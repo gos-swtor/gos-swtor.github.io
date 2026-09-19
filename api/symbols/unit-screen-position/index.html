@@ -10,36 +10,36 @@
       
       
       
-        <link rel="canonical" href="https://gos-swtor.github.io/examples/live-sentinel-resources/">
+        <link rel="canonical" href="https://gos-swtor.github.io/api/symbols/unit-screen-position/">
       
       
-        <link rel="prev" href="../live-sage-pom-prediction/">
+        <link rel="prev" href="../unit-rotation/">
       
       
-        <link rel="next" href="../status-panel/">
+        <link rel="next" href="../unit-speed/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="zensical-0.0.53">
     
     
       
-        <title>Sentinel: resource room and Zen gates - GoS-SWTOR Lua Docs v1.0.0</title>
+        <title>unit:screen_position - GoS-SWTOR Lua Docs v1.0.0</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.39e53929.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.39e53929.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/gos.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/gos.css">
     
-    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sentinel-resource-room-and-zen-gates" class="md-skip">
+        <a href="#unitscreen_position" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sentinel: resource room and Zen gates
+              unit:screen_position
             
           </span>
         </div>
@@ -194,7 +194,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -212,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -304,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/getting-started/" class="md-nav__link">
+      <a href="../../../guides/getting-started/" class="md-nav__link">
         
   
   
@@ -331,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/runtime/" class="md-nav__link">
+      <a href="../../../guides/runtime/" class="md-nav__link">
         
   
   
@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/module-authoring/" class="md-nav__link">
+      <a href="../../../guides/module-authoring/" class="md-nav__link">
         
   
   
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/helpers/" class="md-nav__link">
+      <a href="../../../guides/helpers/" class="md-nav__link">
         
   
   
@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/command-lifecycle/" class="md-nav__link">
+      <a href="../../../guides/command-lifecycle/" class="md-nav__link">
         
   
   
@@ -439,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/event-processing/" class="md-nav__link">
+      <a href="../../../guides/event-processing/" class="md-nav__link">
         
   
   
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/performance/" class="md-nav__link">
+      <a href="../../../guides/performance/" class="md-nav__link">
         
   
   
@@ -497,6 +497,8 @@
       
   
   
+    
+  
   
   
     
@@ -535,15 +537,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -566,7 +568,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -640,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/runtime/" class="md-nav__link">
+      <a href="../../runtime/" class="md-nav__link">
         
   
   
@@ -667,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-on-tick/" class="md-nav__link">
+      <a href="../gos-on-tick/" class="md-nav__link">
         
   
   
@@ -694,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-time-ms/" class="md-nav__link">
+      <a href="../gos-time-ms/" class="md-nav__link">
         
   
   
@@ -726,8 +728,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -785,11 +789,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -809,7 +813,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -826,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/world/" class="md-nav__link">
+      <a href="../../world/" class="md-nav__link">
         
   
   
@@ -853,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-actor-names/" class="md-nav__link">
+      <a href="../gos-actor-names/" class="md-nav__link">
         
   
   
@@ -880,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-target-select/" class="md-nav__link">
+      <a href="../gos-target-select/" class="md-nav__link">
         
   
   
@@ -907,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-world/" class="md-nav__link">
+      <a href="../gos-world/" class="md-nav__link">
         
   
   
@@ -934,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-combat-style/" class="md-nav__link">
+      <a href="../unit-combat-style/" class="md-nav__link">
         
   
   
@@ -961,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-discipline/" class="md-nav__link">
+      <a href="../unit-discipline/" class="md-nav__link">
         
   
   
@@ -988,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-distance/" class="md-nav__link">
+      <a href="../unit-distance/" class="md-nav__link">
         
   
   
@@ -1015,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-handle/" class="md-nav__link">
+      <a href="../unit-handle/" class="md-nav__link">
         
   
   
@@ -1042,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-hp/" class="md-nav__link">
+      <a href="../unit-hp/" class="md-nav__link">
         
   
   
@@ -1069,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-current-target/" class="md-nav__link">
+      <a href="../unit-is-current-target/" class="md-nav__link">
         
   
   
@@ -1096,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-local-player/" class="md-nav__link">
+      <a href="../unit-is-local-player/" class="md-nav__link">
         
   
   
@@ -1123,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-on-screen/" class="md-nav__link">
+      <a href="../unit-is-on-screen/" class="md-nav__link">
         
   
   
@@ -1150,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-name/" class="md-nav__link">
+      <a href="../unit-name/" class="md-nav__link">
         
   
   
@@ -1177,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-position/" class="md-nav__link">
+      <a href="../unit-position/" class="md-nav__link">
         
   
   
@@ -1204,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-reaction/" class="md-nav__link">
+      <a href="../unit-reaction/" class="md-nav__link">
         
   
   
@@ -1231,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-resource/" class="md-nav__link">
+      <a href="../unit-resource/" class="md-nav__link">
         
   
   
@@ -1258,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-rotation/" class="md-nav__link">
+      <a href="../unit-rotation/" class="md-nav__link">
         
   
   
@@ -1282,10 +1286,38 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../api/symbols/unit-screen-position/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1300,6 +1332,88 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Signature
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contract and usage
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contract and usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-identity-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Unit Identity And Lifetime
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unitscreen_positionanchor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>unit:screen_position(anchor?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Related documentation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1312,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-speed/" class="md-nav__link">
+      <a href="../unit-speed/" class="md-nav__link">
         
   
   
@@ -1339,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-toughness/" class="md-nav__link">
+      <a href="../unit-toughness/" class="md-nav__link">
         
   
   
@@ -1366,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-type/" class="md-nav__link">
+      <a href="../unit-type/" class="md-nav__link">
         
   
   
@@ -1393,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-velocity/" class="md-nav__link">
+      <a href="../unit-velocity/" class="md-nav__link">
         
   
   
@@ -1420,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/world-resolve/" class="md-nav__link">
+      <a href="../world-resolve/" class="md-nav__link">
         
   
   
@@ -1447,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/world-units/" class="md-nav__link">
+      <a href="../world-units/" class="md-nav__link">
         
   
   
@@ -1537,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/effects/" class="md-nav__link">
+      <a href="../../effects/" class="md-nav__link">
         
   
   
@@ -1564,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-effect/" class="md-nav__link">
+      <a href="../unit-effect/" class="md-nav__link">
         
   
   
@@ -1591,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-effects/" class="md-nav__link">
+      <a href="../unit-effects/" class="md-nav__link">
         
   
   
@@ -1687,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/input/" class="md-nav__link">
+      <a href="../../input/" class="md-nav__link">
         
   
   
@@ -1714,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-cursor/" class="md-nav__link">
+      <a href="../gos-input-cursor/" class="md-nav__link">
         
   
   
@@ -1741,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-is-down/" class="md-nav__link">
+      <a href="../gos-input-is-down/" class="md-nav__link">
         
   
   
@@ -1768,7 +1882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-state/" class="md-nav__link">
+      <a href="../gos-input-state/" class="md-nav__link">
         
   
   
@@ -1795,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-was-pressed/" class="md-nav__link">
+      <a href="../gos-input-was-pressed/" class="md-nav__link">
         
   
   
@@ -1822,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-was-released/" class="md-nav__link">
+      <a href="../gos-input-was-released/" class="md-nav__link">
         
   
   
@@ -1914,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/settings/" class="md-nav__link">
+      <a href="../../settings/" class="md-nav__link">
         
   
   
@@ -1941,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-get/" class="md-nav__link">
+      <a href="../gos-settings-get/" class="md-nav__link">
         
   
   
@@ -1968,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-register/" class="md-nav__link">
+      <a href="../gos-settings-register/" class="md-nav__link">
         
   
   
@@ -1995,7 +2109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-set/" class="md-nav__link">
+      <a href="../gos-settings-set/" class="md-nav__link">
         
   
   
@@ -2109,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/abilities/" class="md-nav__link">
+      <a href="../../abilities/" class="md-nav__link">
         
   
   
@@ -2136,7 +2250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-abandon-command/" class="md-nav__link">
+      <a href="../gos-abilities-abandon-command/" class="md-nav__link">
         
   
   
@@ -2163,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-action-slots/" class="md-nav__link">
+      <a href="../gos-abilities-action-slots/" class="md-nav__link">
         
   
   
@@ -2190,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-can-cast/" class="md-nav__link">
+      <a href="../gos-abilities-can-cast/" class="md-nav__link">
         
   
   
@@ -2217,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cast/" class="md-nav__link">
+      <a href="../gos-abilities-cast/" class="md-nav__link">
         
   
   
@@ -2244,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-command-status/" class="md-nav__link">
+      <a href="../gos-abilities-command-status/" class="md-nav__link">
         
   
   
@@ -2271,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cooldown-duration/" class="md-nav__link">
+      <a href="../gos-abilities-cooldown-duration/" class="md-nav__link">
         
   
   
@@ -2298,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cooldown-remaining/" class="md-nav__link">
+      <a href="../gos-abilities-cooldown-remaining/" class="md-nav__link">
         
   
   
@@ -2325,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-current-cast/" class="md-nav__link">
+      <a href="../gos-abilities-current-cast/" class="md-nav__link">
         
   
   
@@ -2352,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-gcd-remaining/" class="md-nav__link">
+      <a href="../gos-abilities-gcd-remaining/" class="md-nav__link">
         
   
   
@@ -2379,7 +2493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-info/" class="md-nav__link">
+      <a href="../gos-abilities-info/" class="md-nav__link">
         
   
   
@@ -2406,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-is-casting-or-channeling/" class="md-nav__link">
+      <a href="../gos-abilities-is-casting-or-channeling/" class="md-nav__link">
         
   
   
@@ -2433,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-is-ready/" class="md-nav__link">
+      <a href="../gos-abilities-is-ready/" class="md-nav__link">
         
   
   
@@ -2460,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-loadout/" class="md-nav__link">
+      <a href="../gos-abilities-loadout/" class="md-nav__link">
         
   
   
@@ -2487,7 +2601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-release-command/" class="md-nav__link">
+      <a href="../gos-abilities-release-command/" class="md-nav__link">
         
   
   
@@ -2579,7 +2693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/events/" class="md-nav__link">
+      <a href="../../events/" class="md-nav__link">
         
   
   
@@ -2606,7 +2720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-casts/" class="md-nav__link">
+      <a href="../gos-events-casts/" class="md-nav__link">
         
   
   
@@ -2633,7 +2747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-combat/" class="md-nav__link">
+      <a href="../gos-events-combat/" class="md-nav__link">
         
   
   
@@ -2660,7 +2774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-instants/" class="md-nav__link">
+      <a href="../gos-events-instants/" class="md-nav__link">
         
   
   
@@ -2766,7 +2880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/overlay/" class="md-nav__link">
+      <a href="../../overlay/" class="md-nav__link">
         
   
   
@@ -2793,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-bar/" class="md-nav__link">
+      <a href="../gos-overlay-draw-bar/" class="md-nav__link">
         
   
   
@@ -2820,7 +2934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-circle/" class="md-nav__link">
+      <a href="../gos-overlay-draw-circle/" class="md-nav__link">
         
   
   
@@ -2847,7 +2961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-image/" class="md-nav__link">
+      <a href="../gos-overlay-draw-image/" class="md-nav__link">
         
   
   
@@ -2874,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-line/" class="md-nav__link">
+      <a href="../gos-overlay-draw-line/" class="md-nav__link">
         
   
   
@@ -2901,7 +3015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-rect/" class="md-nav__link">
+      <a href="../gos-overlay-draw-rect/" class="md-nav__link">
         
   
   
@@ -2928,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-rectangle/" class="md-nav__link">
+      <a href="../gos-overlay-draw-rectangle/" class="md-nav__link">
         
   
   
@@ -2955,7 +3069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-text/" class="md-nav__link">
+      <a href="../gos-overlay-draw-text/" class="md-nav__link">
         
   
   
@@ -2982,7 +3096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-interact/" class="md-nav__link">
+      <a href="../gos-overlay-interact/" class="md-nav__link">
         
   
   
@@ -3009,7 +3123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-unit-label/" class="md-nav__link">
+      <a href="../gos-overlay-unit-label/" class="md-nav__link">
         
   
   
@@ -3036,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-viewport/" class="md-nav__link">
+      <a href="../gos-overlay-viewport/" class="md-nav__link">
         
   
   
@@ -3136,7 +3250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/logging/" class="md-nav__link">
+      <a href="../../logging/" class="md-nav__link">
         
   
   
@@ -3163,7 +3277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-debug/" class="md-nav__link">
+      <a href="../gos-log-debug/" class="md-nav__link">
         
   
   
@@ -3190,7 +3304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-error/" class="md-nav__link">
+      <a href="../gos-log-error/" class="md-nav__link">
         
   
   
@@ -3217,7 +3331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-info/" class="md-nav__link">
+      <a href="../gos-log-info/" class="md-nav__link">
         
   
   
@@ -3244,7 +3358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-success/" class="md-nav__link">
+      <a href="../gos-log-success/" class="md-nav__link">
         
   
   
@@ -3271,7 +3385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-warn/" class="md-nav__link">
+      <a href="../gos-log-warn/" class="md-nav__link">
         
   
   
@@ -3298,7 +3412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-write/" class="md-nav__link">
+      <a href="../gos-log-write/" class="md-nav__link">
         
   
   
@@ -3325,7 +3439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/print/" class="md-nav__link">
+      <a href="../print/" class="md-nav__link">
         
   
   
@@ -3453,7 +3567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/files/" class="md-nav__link">
+      <a href="../../files/" class="md-nav__link">
         
   
   
@@ -3480,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/deletefile/" class="md-nav__link">
+      <a href="../deletefile/" class="md-nav__link">
         
   
   
@@ -3507,7 +3621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/downloadfileasync/" class="md-nav__link">
+      <a href="../downloadfileasync/" class="md-nav__link">
         
   
   
@@ -3534,7 +3648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/fileexist/" class="md-nav__link">
+      <a href="../fileexist/" class="md-nav__link">
         
   
   
@@ -3561,7 +3675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/getfromweborlocal/" class="md-nav__link">
+      <a href="../getfromweborlocal/" class="md-nav__link">
         
   
   
@@ -3588,7 +3702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/listfiles/" class="md-nav__link">
+      <a href="../listfiles/" class="md-nav__link">
         
   
   
@@ -3615,7 +3729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/makedirectory/" class="md-nav__link">
+      <a href="../makedirectory/" class="md-nav__link">
         
   
   
@@ -3642,7 +3756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/readfile/" class="md-nav__link">
+      <a href="../readfile/" class="md-nav__link">
         
   
   
@@ -3669,7 +3783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unziparchive/" class="md-nav__link">
+      <a href="../unziparchive/" class="md-nav__link">
         
   
   
@@ -3696,7 +3810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/writefile/" class="md-nav__link">
+      <a href="../writefile/" class="md-nav__link">
         
   
   
@@ -3723,7 +3837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-delete/" class="md-nav__link">
+      <a href="../gos-file-delete/" class="md-nav__link">
         
   
   
@@ -3750,7 +3864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-download-async/" class="md-nav__link">
+      <a href="../gos-file-download-async/" class="md-nav__link">
         
   
   
@@ -3777,7 +3891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-exists/" class="md-nav__link">
+      <a href="../gos-file-exists/" class="md-nav__link">
         
   
   
@@ -3804,7 +3918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-get-from-web-or-local/" class="md-nav__link">
+      <a href="../gos-file-get-from-web-or-local/" class="md-nav__link">
         
   
   
@@ -3831,7 +3945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-list/" class="md-nav__link">
+      <a href="../gos-file-list/" class="md-nav__link">
         
   
   
@@ -3858,7 +3972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-mkdir/" class="md-nav__link">
+      <a href="../gos-file-mkdir/" class="md-nav__link">
         
   
   
@@ -3885,7 +3999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-read/" class="md-nav__link">
+      <a href="../gos-file-read/" class="md-nav__link">
         
   
   
@@ -3912,7 +4026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-unzip/" class="md-nav__link">
+      <a href="../gos-file-unzip/" class="md-nav__link">
         
   
   
@@ -3939,7 +4053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-write/" class="md-nav__link">
+      <a href="../gos-file-write/" class="md-nav__link">
         
   
   
@@ -3966,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-import/" class="md-nav__link">
+      <a href="../gos-import/" class="md-nav__link">
         
   
   
@@ -3993,7 +4107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/import/" class="md-nav__link">
+      <a href="../import/" class="md-nav__link">
         
   
   
@@ -4020,7 +4134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/require/" class="md-nav__link">
+      <a href="../require/" class="md-nav__link">
         
   
   
@@ -4059,8 +4173,6 @@
       
   
   
-    
-  
   
   
     
@@ -4083,15 +4195,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../examples/" class="md-nav__link ">
               
   
   
@@ -4114,7 +4226,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4130,10 +4242,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -4153,11 +4263,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -4177,7 +4287,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4194,7 +4304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-commando-markers/" class="md-nav__link">
+      <a href="../../../examples/live-commando-markers/" class="md-nav__link">
         
   
   
@@ -4221,7 +4331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-operative-probes/" class="md-nav__link">
+      <a href="../../../examples/live-operative-probes/" class="md-nav__link">
         
   
   
@@ -4248,7 +4358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-seer-triage/" class="md-nav__link">
+      <a href="../../../examples/live-seer-triage/" class="md-nav__link">
         
   
   
@@ -4275,7 +4385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-sage-pom-prediction/" class="md-nav__link">
+      <a href="../../../examples/live-sage-pom-prediction/" class="md-nav__link">
         
   
   
@@ -4299,38 +4409,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Sentinel: resource gates
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../examples/live-sentinel-resources/" class="md-nav__link">
         
   
   
@@ -4345,60 +4427,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#code-from-the-live-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Code from the live script
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-the-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        How to use the pattern
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-contracts" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Related contracts
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4478,7 +4506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../status-panel/" class="md-nav__link">
+      <a href="../../../examples/status-panel/" class="md-nav__link">
         
   
   
@@ -4505,7 +4533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../incoming-damage/" class="md-nav__link">
+      <a href="../../../examples/incoming-damage/" class="md-nav__link">
         
   
   
@@ -4532,7 +4560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../last-seen-marker/" class="md-nav__link">
+      <a href="../../../examples/last-seen-marker/" class="md-nav__link">
         
   
   
@@ -4559,7 +4587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../single-action/" class="md-nav__link">
+      <a href="../../../examples/single-action/" class="md-nav__link">
         
   
   
@@ -4586,7 +4614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bounded-history/" class="md-nav__link">
+      <a href="../../../examples/bounded-history/" class="md-nav__link">
         
   
   
@@ -4628,7 +4656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/sharing/" class="md-nav__link">
+      <a href="../../../guides/sharing/" class="md-nav__link">
         
   
   
@@ -4676,10 +4704,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code-from-the-live-script" class="md-nav__link">
+  <a href="#signature" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Code from the live script
+        Signature
       </span>
     </span>
   </a>
@@ -4687,21 +4715,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-pattern" class="md-nav__link">
+  <a href="#contract-and-usage" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        How to use the pattern
+        Contract and usage
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contract and usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-identity-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Unit Identity And Lifetime
       </span>
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#related-contracts" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#unitscreen_positionanchor" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Related contracts
+        <code>unit:screen_position(anchor?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Related documentation
       </span>
     </span>
   </a>
@@ -4723,58 +4779,86 @@
                 
                   
 
-<h1 id="sentinel-resource-room-and-zen-gates">Sentinel: resource room and Zen gates<a class="headerlink" href="#sentinel-resource-room-and-zen-gates" title="Permanent link">&para;</a></h1>
-<p><strong>Live-script excerpt</strong> - from <code>sentinel_concentration.lua</code>, used by the project's live-tested scripts. The functions below are copied unchanged.</p>
-<p>These are the Concentration route's real resource decisions. Zealous Strike needs room for its Focus gain. Zen checks its setting, a known Centering observation, stack count, resource room and an available follow-up spender before asking whether the ability is usable.</p>
-<p><a href="../code/live-sentinel-resources.lua">View or save the excerpt</a></p>
-<div class="admonition note">
-<p class="admonition-title">Integration fragment, not a standalone rotation</p>
-<p>These functions use the route's prepared <code>state</code> and shared definitions: <code>ZEALOUS_FOCUS_GAIN</code>, <code>ZEN_CENTERING_COST</code>, <code>ZEN_IMMEDIATE_FOCUS_GAIN</code>, <code>number_text</code>, <code>zen_has_spender</code>, and <code>can_use</code>. State includes <code>abilities</code>, <code>focus</code>, <code>focusMax</code> and optional <code>centering</code>. Keep those dependencies with the functions when porting; the excerpt alone is not an entry point.</p>
-</div>
-<h2 id="code-from-the-live-script">Code from the live script<a class="headerlink" href="#code-from-the-live-script" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">zealous_focus_has_room</span><span class="p">(</span><span class="nv">state</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">abilities</span><span class="p">[</span><span class="s2">"Zealous Strike"</span><span class="p">]</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="ow">and</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nv">state</span><span class="p">.</span><span class="py">focus</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">focusMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">ZEALOUS_FOCUS_GAIN</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kr">end</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">zen_gate</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">options</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">options</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"table"</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">options</span><span class="p">.</span><span class="py">automaticZen</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"setting_disabled"</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">centering</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"centering_unavailable"</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">centering</span><span class="p">.</span><span class="py">present</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"centering_absent"</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">state</span><span class="p">.</span><span class="py">centering</span><span class="p">.</span><span class="py">stacks</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">"number"</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"centering_stacks_unavailable"</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">centering</span><span class="p">.</span><span class="py">stacks</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">ZEN_CENTERING_COST</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"centering_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nf">number_text</span><span class="p">(</span><span class="nv">state</span><span class="p">.</span><span class="py">centering</span><span class="p">.</span><span class="py">stacks</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">..</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="s2">"_of_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">ZEN_CENTERING_COST</span><span class="p">)</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">focus_room</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">focusMax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">state</span><span class="p">.</span><span class="py">focus</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">focus_room</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">ZEN_IMMEDIATE_FOCUS_GAIN</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"focus_room_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nf">number_text</span><span class="p">(</span><span class="nv">focus_room</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">..</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="s2">"_need_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">ZEN_IMMEDIATE_FOCUS_GAIN</span><span class="p">)</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">zen_has_spender</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">options</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"no_spender_after_focus_gain"</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">castable</span><span class="p">,</span><span class="w"> </span><span class="nv">reason</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">can_use</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="s2">"Zen"</span><span class="p">,</span><span class="w"> </span><span class="nv">options</span><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">castable</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">reason</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">"centering_30"</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="kr">end</span>
+<h1 id="unitscreen_position">unit:screen_position<a class="headerlink" href="#unitscreen_position" title="Permanent link">&para;</a></h1>
+<p><strong>API version: <code>1.0.0</code></strong></p>
+<p>Read a current projected top, center or bottom unit anchor in pixels; return nil when unavailable.</p>
+<h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>unit:screen_position(anchor)
 </code></pre></div>
-<h2 id="how-to-use-the-pattern">How to use the pattern<a class="headerlink" href="#how-to-use-the-pattern" title="Permanent link">&para;</a></h2>
-<p>The resource-room test is separate from ability readiness. A known ability can be ready while a generator would waste resource; conversely, resource room does not prove a cast will be accepted.</p>
-<p><code>zen_gate</code> preserves the difference between missing Centering data, an absent effect and a known effect with insufficient stacks. It returns a boolean plus a route-local explanation. The live route uses 30 Centering for this branch, but its constants and spender logic belong to that route's supported loadout; this is not a universal Sentinel or Marauder rotation.</p>
-<p>After the gate succeeds, let the top-level executor submit and observe the command. Do not treat this decision, or a queued result, as activation proof. The pattern generalizes to proc spenders, energy recovery and burst preparation without inventing missing resource values.</p>
-<h2 id="related-contracts">Related contracts<a class="headerlink" href="#related-contracts" title="Permanent link">&para;</a></h2>
-<p><a href="../../api/world/">Resources and availability</a> | <a href="../../api/abilities/">Known abilities and current costs</a> | <a href="../../guides/command-lifecycle/">Command outcomes</a></p>
+<h2 id="contract-and-usage">Contract and usage<a class="headerlink" href="#contract-and-usage" title="Permanent link">&para;</a></h2>
+<h3 id="unit-identity-and-lifetime">Unit Identity And Lifetime<a class="headerlink" href="#unit-identity-and-lifetime" title="Permanent link">&para;</a></h3>
+<p><code>unit:name()</code> reads the prepared current-unit view of the same actor-name
+authority used by combat-event actor labels and <code>gos.actor_names</code>. It does not
+perform a name lookup on demand. Its snapshot can be older than a later metadata
+read, but does not introduce a second name resolver.</p>
+<p>Every <code>GosUnit</code> state-reading method raises <code>stale_unit</code> after its world
+generation expires. <code>unit:handle()</code> is the exception and remains available so
+the unit can be reacquired with a fresh <code>world:resolve(handle)</code>.</p>
+<p>Within one world, repeated lookups of the same unit compare equal with <code>==</code>.
+Values from different generations compare unequal even when their handles
+match.</p>
+<h3 id="unitscreen_positionanchor"><code>unit:screen_position(anchor?)</code><a class="headerlink" href="#unitscreen_positionanchor" title="Permanent link">&para;</a></h3>
+<p>Read a projected anchor from this unit's current, generation-validated render
+observation. This method reads prepared screen coordinates; it does not perform
+a world-to-screen calculation on demand, a screen-to-world raycast, or a
+line-of-sight test.</p>
+<p><code>anchor</code> is an optional lowercase string:</p>
+<table>
+<thead>
+<tr>
+<th>Anchor</th>
+<th>Point returned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"top"</code></td>
+<td>Top-center of the prepared unit box</td>
+</tr>
+<tr>
+<td><code>"center"</code></td>
+<td>Vertical midpoint of the prepared unit box; the default</td>
+</tr>
+<tr>
+<td><code>"bottom"</code></td>
+<td>Bottom-center of the prepared unit box</td>
+</tr>
+</tbody>
+</table>
+<p>Omitting the argument or passing nil uses <code>"center"</code>. Unsupported anchor
+strings, non-string non-nil values, or extra arguments raise a Lua error.
+<code>"middle"</code> and <code>"screen"</code> are not accepted aliases for this method.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{ x = number, y = number } | nil
+</code></pre></div>
+<p>The returned X and Y are render-viewport pixels, with the origin at the top-left,
+X increasing rightwards and Y increasing downwards. They share the coordinate
+space of <a href="../../input/#gosinputcursor">gos.input.cursor()</a> and screen overlays.
+They are not the game-world coordinates returned by <code>unit:position()</code>, and no
+world-unit-to-metre conversion applies. These are box anchors, not anatomical
+bones or an exact clickable outline. Values are not clamped to the viewport.</p>
+<p>Return <code>nil</code> when the current observation is not on screen or the prepared
+projection is unavailable/invalid. Do not reuse last-known pixels as a current
+targeting observation. An expired <code>GosUnit</code> raises <code>stale_unit</code> rather than
+returning nil; reacquire the unit from the current world before reading it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">gos</span><span class="p">.</span><span class="nf">on_tick</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gos</span><span class="p">.</span><span class="nf">world</span><span class="p">()</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">world</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">world</span><span class="p">.</span><span class="py">current_target</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">unit</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">unit</span><span class="p">.</span><span class="py">screen_position</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">unit</span><span class="p">:</span><span class="nf">screen_position</span><span class="p">()</span><span class="w"> </span><span class="c1">-- default center</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="nf">draw_circle</span><span class="p">(</span><span class="s2">"unit_anchor"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nv">anchor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"screen"</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nv">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>A non-nil point proves only that these screen coordinates are available. Check
+health, reaction, range and native ability admission separately before acting.
+The method does not capture mouse input, change selection or cast anything, and
+can return a position even when the cursor query is unavailable. See the
+<a href="../../input/#gosinputcursor">cursor example</a> for a pixel-radius comparison.</p>
+<h2 id="related-documentation">Related documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<p><a href="../../world/">Full world and units contract</a> | <a href="../../../examples/live-seer-triage/">Seer healing triage</a></p>
 
 
 
@@ -4836,10 +4920,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.tracking","search.highlight","content.code.copy","content.code.annotate","toc.follow"],"search":"../../assets/javascripts/workers/search.4101ac01.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.tracking","search.highlight","content.code.copy","content.code.annotate","toc.follow"],"search":"../../../assets/javascripts/workers/search.4101ac01.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.01903dbc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.01903dbc.min.js"></script>
       
     
   </body>

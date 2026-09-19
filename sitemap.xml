@@ -88,6 +88,9 @@
         <loc>https://gos-swtor.github.io/api/symbols/unit-rotation/</loc>
       </url>
       <url>
+        <loc>https://gos-swtor.github.io/api/symbols/unit-screen-position/</loc>
+      </url>
+      <url>
         <loc>https://gos-swtor.github.io/api/symbols/unit-speed/</loc>
       </url>
       <url>
@@ -116,6 +119,9 @@
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/input/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-input-cursor/</loc>
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/symbols/gos-input-is-down/</loc>

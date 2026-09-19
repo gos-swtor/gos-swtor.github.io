@@ -779,6 +779,8 @@
       
         
       
+        
+      
     
     
     
@@ -1285,6 +1287,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../symbols/unit-screen-position/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:screen_position
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../symbols/unit-speed/" class="md-nav__link">
         
   
@@ -1611,6 +1640,8 @@
       
         
       
+        
+      
     
     
     
@@ -1666,6 +1697,33 @@
     
   
   Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symbols/gos-input-cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.input.cursor
 
     
   </span>
@@ -4683,7 +4741,7 @@ script roots and are cached per top-level script environment.</p>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>CACHE_PATH
 </code></pre></div>
 <p>Relative file paths resolve from <code>SCRIPT_PATH</code>. File operations cannot escape
-the approved roots.</p>
+the approved roots. Network-share and device paths are rejected before filesystem resolution.</p>
 <h3 id="file-helpers">File Helpers<a class="headerlink" href="#file-helpers" title="Permanent link">&para;</a></h3>
 <p>Global helpers and their <code>gos.file</code> aliases:</p>
 <table>
@@ -4749,6 +4807,19 @@ reached.</p>
 <p>ZIP extraction is rejected in tick callbacks for the same blocking-work reason. Downloads
 accept HTTP or HTTPS and are limited to 256 MiB. ZIP extraction accepts <code>.zip</code>,
 validates archive paths, and limits total extracted size to 512 MiB.</p>
+<p>Downloads require a direct HTTP 200 response. Redirects and authentication are
+not followed, and stored cookies or credentials are not sent. URLs containing
+embedded credentials, fragments, backslashes or control characters are rejected.
+Provide the final public file URL, not a login or redirect URL.</p>
+<p>Connection, send and receive operations use 10-second timeouts, with a
+30-second transfer budget checked between blocking operations and at completion.
+This is not an exact wall-clock cancellation deadline: an in-progress blocking
+operation can extend elapsed time. Oversized or incomplete responses fail.</p>
+<p><code>UnzipArchive</code> returns success only after synchronous extraction and output
+verification complete. Archive paths and sizes are preflighted; links, duplicate
+output paths, disallowed file types and paths escaping approved roots are
+rejected. A failed extraction may leave partial output; failure is not rollback,
+and callers must not assume an existing destination is an untouched snapshot.</p>
 
 
 
