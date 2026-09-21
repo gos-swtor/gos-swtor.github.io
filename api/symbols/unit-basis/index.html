@@ -10,36 +10,36 @@
       
       
       
-        <link rel="canonical" href="https://gos-swtor.github.io/guides/performance/">
+        <link rel="canonical" href="https://gos-swtor.github.io/api/symbols/unit-basis/">
       
       
-        <link rel="prev" href="../event-processing/">
+        <link rel="prev" href="../gos-world/">
       
       
-        <link rel="next" href="../../api/">
+        <link rel="next" href="../unit-combat-style/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="zensical-0.0.53">
     
     
       
-        <title>Performance and bounded work - GoS-SWTOR Lua Docs v1.0.0</title>
+        <title>unit:basis - GoS-SWTOR Lua Docs v1.0.0</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.39e53929.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.39e53929.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/gos.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/gos.css">
     
-    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#performance-and-bounded-work" class="md-skip">
+        <a href="#unitbasis" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Performance and bounded work
+              unit:basis
             
           </span>
         </div>
@@ -194,7 +194,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -212,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -235,377 +235,10 @@
       
   
   
-    
-  
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Developer guide
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-  Developer guide
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Getting started
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../runtime/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Runtime and data
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../module-authoring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Module authoring
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../helpers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Helper modules
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../command-lifecycle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Command lifecycle
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../event-processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Event processing
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Performance
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Performance
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#keep-each-update-finite" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Keep each update finite
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consume-new-events-not-old-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Consume new events, not old history
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-then-draw" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Prepare, then draw
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avoid-expensive-work-in-ticks" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Avoid expensive work in ticks
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -634,11 +267,285 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer guide
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer guide
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime and data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/module-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Module authoring
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Helper modules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/command-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Command lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/event-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event processing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Performance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -661,7 +568,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -735,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/runtime/" class="md-nav__link">
+      <a href="../../runtime/" class="md-nav__link">
         
   
   
@@ -762,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-on-tick/" class="md-nav__link">
+      <a href="../gos-on-tick/" class="md-nav__link">
         
   
   
@@ -789,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-time-ms/" class="md-nav__link">
+      <a href="../gos-time-ms/" class="md-nav__link">
         
   
   
@@ -821,8 +728,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -882,11 +791,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -906,7 +815,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -923,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/world/" class="md-nav__link">
+      <a href="../../world/" class="md-nav__link">
         
   
   
@@ -950,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-actor-names/" class="md-nav__link">
+      <a href="../gos-actor-names/" class="md-nav__link">
         
   
   
@@ -977,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-target-select/" class="md-nav__link">
+      <a href="../gos-target-select/" class="md-nav__link">
         
   
   
@@ -1004,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-world/" class="md-nav__link">
+      <a href="../gos-world/" class="md-nav__link">
         
   
   
@@ -1028,10 +937,38 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../api/symbols/unit-basis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:basis
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1046,6 +983,88 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Signature
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contract and usage
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contract and usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-identity-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Unit Identity And Lifetime
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-method-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Unit Method Reference
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Related documentation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1058,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-combat-style/" class="md-nav__link">
+      <a href="../unit-combat-style/" class="md-nav__link">
         
   
   
@@ -1085,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-discipline/" class="md-nav__link">
+      <a href="../unit-discipline/" class="md-nav__link">
         
   
   
@@ -1112,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-distance/" class="md-nav__link">
+      <a href="../unit-distance/" class="md-nav__link">
         
   
   
@@ -1139,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-handle/" class="md-nav__link">
+      <a href="../unit-handle/" class="md-nav__link">
         
   
   
@@ -1166,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-hp/" class="md-nav__link">
+      <a href="../unit-hp/" class="md-nav__link">
         
   
   
@@ -1193,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-current-target/" class="md-nav__link">
+      <a href="../unit-is-current-target/" class="md-nav__link">
         
   
   
@@ -1220,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-local-player/" class="md-nav__link">
+      <a href="../unit-is-local-player/" class="md-nav__link">
         
   
   
@@ -1247,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-is-on-screen/" class="md-nav__link">
+      <a href="../unit-is-on-screen/" class="md-nav__link">
         
   
   
@@ -1274,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-name/" class="md-nav__link">
+      <a href="../unit-name/" class="md-nav__link">
         
   
   
@@ -1301,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-position/" class="md-nav__link">
+      <a href="../unit-position/" class="md-nav__link">
         
   
   
@@ -1328,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-reaction/" class="md-nav__link">
+      <a href="../unit-reaction/" class="md-nav__link">
         
   
   
@@ -1355,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-resource/" class="md-nav__link">
+      <a href="../unit-resource/" class="md-nav__link">
         
   
   
@@ -1382,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-rotation/" class="md-nav__link">
+      <a href="../unit-rotation/" class="md-nav__link">
         
   
   
@@ -1409,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-screen-position/" class="md-nav__link">
+      <a href="../unit-screen-position/" class="md-nav__link">
         
   
   
@@ -1436,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-speed/" class="md-nav__link">
+      <a href="../unit-speed/" class="md-nav__link">
         
   
   
@@ -1463,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-toughness/" class="md-nav__link">
+      <a href="../unit-toughness/" class="md-nav__link">
         
   
   
@@ -1490,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-type/" class="md-nav__link">
+      <a href="../unit-type/" class="md-nav__link">
         
   
   
@@ -1517,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-velocity/" class="md-nav__link">
+      <a href="../unit-velocity/" class="md-nav__link">
         
   
   
@@ -1544,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/world-resolve/" class="md-nav__link">
+      <a href="../world-resolve/" class="md-nav__link">
         
   
   
@@ -1571,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/world-units/" class="md-nav__link">
+      <a href="../world-units/" class="md-nav__link">
         
   
   
@@ -1661,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/effects/" class="md-nav__link">
+      <a href="../../effects/" class="md-nav__link">
         
   
   
@@ -1688,7 +1707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-effect/" class="md-nav__link">
+      <a href="../unit-effect/" class="md-nav__link">
         
   
   
@@ -1715,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unit-effects/" class="md-nav__link">
+      <a href="../unit-effects/" class="md-nav__link">
         
   
   
@@ -1811,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/input/" class="md-nav__link">
+      <a href="../../input/" class="md-nav__link">
         
   
   
@@ -1838,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-cursor/" class="md-nav__link">
+      <a href="../gos-input-cursor/" class="md-nav__link">
         
   
   
@@ -1865,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-is-down/" class="md-nav__link">
+      <a href="../gos-input-is-down/" class="md-nav__link">
         
   
   
@@ -1892,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-state/" class="md-nav__link">
+      <a href="../gos-input-state/" class="md-nav__link">
         
   
   
@@ -1919,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-was-pressed/" class="md-nav__link">
+      <a href="../gos-input-was-pressed/" class="md-nav__link">
         
   
   
@@ -1946,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-input-was-released/" class="md-nav__link">
+      <a href="../gos-input-was-released/" class="md-nav__link">
         
   
   
@@ -2038,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/settings/" class="md-nav__link">
+      <a href="../../settings/" class="md-nav__link">
         
   
   
@@ -2065,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-get/" class="md-nav__link">
+      <a href="../gos-settings-get/" class="md-nav__link">
         
   
   
@@ -2092,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-register/" class="md-nav__link">
+      <a href="../gos-settings-register/" class="md-nav__link">
         
   
   
@@ -2119,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-settings-set/" class="md-nav__link">
+      <a href="../gos-settings-set/" class="md-nav__link">
         
   
   
@@ -2233,7 +2252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/abilities/" class="md-nav__link">
+      <a href="../../abilities/" class="md-nav__link">
         
   
   
@@ -2260,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-abandon-command/" class="md-nav__link">
+      <a href="../gos-abilities-abandon-command/" class="md-nav__link">
         
   
   
@@ -2287,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-action-slots/" class="md-nav__link">
+      <a href="../gos-abilities-action-slots/" class="md-nav__link">
         
   
   
@@ -2314,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-can-cast/" class="md-nav__link">
+      <a href="../gos-abilities-can-cast/" class="md-nav__link">
         
   
   
@@ -2341,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cast/" class="md-nav__link">
+      <a href="../gos-abilities-cast/" class="md-nav__link">
         
   
   
@@ -2368,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-command-status/" class="md-nav__link">
+      <a href="../gos-abilities-command-status/" class="md-nav__link">
         
   
   
@@ -2395,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cooldown-duration/" class="md-nav__link">
+      <a href="../gos-abilities-cooldown-duration/" class="md-nav__link">
         
   
   
@@ -2422,7 +2441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-cooldown-remaining/" class="md-nav__link">
+      <a href="../gos-abilities-cooldown-remaining/" class="md-nav__link">
         
   
   
@@ -2449,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-current-cast/" class="md-nav__link">
+      <a href="../gos-abilities-current-cast/" class="md-nav__link">
         
   
   
@@ -2476,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-gcd-remaining/" class="md-nav__link">
+      <a href="../gos-abilities-gcd-remaining/" class="md-nav__link">
         
   
   
@@ -2503,7 +2522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-info/" class="md-nav__link">
+      <a href="../gos-abilities-info/" class="md-nav__link">
         
   
   
@@ -2530,7 +2549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-is-casting-or-channeling/" class="md-nav__link">
+      <a href="../gos-abilities-is-casting-or-channeling/" class="md-nav__link">
         
   
   
@@ -2557,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-is-ready/" class="md-nav__link">
+      <a href="../gos-abilities-is-ready/" class="md-nav__link">
         
   
   
@@ -2584,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-loadout/" class="md-nav__link">
+      <a href="../gos-abilities-loadout/" class="md-nav__link">
         
   
   
@@ -2611,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-abilities-release-command/" class="md-nav__link">
+      <a href="../gos-abilities-release-command/" class="md-nav__link">
         
   
   
@@ -2703,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/events/" class="md-nav__link">
+      <a href="../../events/" class="md-nav__link">
         
   
   
@@ -2730,7 +2749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-casts/" class="md-nav__link">
+      <a href="../gos-events-casts/" class="md-nav__link">
         
   
   
@@ -2757,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-combat/" class="md-nav__link">
+      <a href="../gos-events-combat/" class="md-nav__link">
         
   
   
@@ -2784,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-events-instants/" class="md-nav__link">
+      <a href="../gos-events-instants/" class="md-nav__link">
         
   
   
@@ -2890,7 +2909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/overlay/" class="md-nav__link">
+      <a href="../../overlay/" class="md-nav__link">
         
   
   
@@ -2917,7 +2936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-bar/" class="md-nav__link">
+      <a href="../gos-overlay-draw-bar/" class="md-nav__link">
         
   
   
@@ -2944,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-circle/" class="md-nav__link">
+      <a href="../gos-overlay-draw-circle/" class="md-nav__link">
         
   
   
@@ -2971,7 +2990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-image/" class="md-nav__link">
+      <a href="../gos-overlay-draw-image/" class="md-nav__link">
         
   
   
@@ -2998,7 +3017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-line/" class="md-nav__link">
+      <a href="../gos-overlay-draw-line/" class="md-nav__link">
         
   
   
@@ -3025,7 +3044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-rect/" class="md-nav__link">
+      <a href="../gos-overlay-draw-rect/" class="md-nav__link">
         
   
   
@@ -3052,7 +3071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-rectangle/" class="md-nav__link">
+      <a href="../gos-overlay-draw-rectangle/" class="md-nav__link">
         
   
   
@@ -3079,7 +3098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-draw-text/" class="md-nav__link">
+      <a href="../gos-overlay-draw-text/" class="md-nav__link">
         
   
   
@@ -3106,7 +3125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-interact/" class="md-nav__link">
+      <a href="../gos-overlay-interact/" class="md-nav__link">
         
   
   
@@ -3133,7 +3152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-unit-label/" class="md-nav__link">
+      <a href="../gos-overlay-unit-label/" class="md-nav__link">
         
   
   
@@ -3160,7 +3179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-overlay-viewport/" class="md-nav__link">
+      <a href="../gos-overlay-viewport/" class="md-nav__link">
         
   
   
@@ -3260,7 +3279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/logging/" class="md-nav__link">
+      <a href="../../logging/" class="md-nav__link">
         
   
   
@@ -3287,7 +3306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-debug/" class="md-nav__link">
+      <a href="../gos-log-debug/" class="md-nav__link">
         
   
   
@@ -3314,7 +3333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-error/" class="md-nav__link">
+      <a href="../gos-log-error/" class="md-nav__link">
         
   
   
@@ -3341,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-info/" class="md-nav__link">
+      <a href="../gos-log-info/" class="md-nav__link">
         
   
   
@@ -3368,7 +3387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-success/" class="md-nav__link">
+      <a href="../gos-log-success/" class="md-nav__link">
         
   
   
@@ -3395,7 +3414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-warn/" class="md-nav__link">
+      <a href="../gos-log-warn/" class="md-nav__link">
         
   
   
@@ -3422,7 +3441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-log-write/" class="md-nav__link">
+      <a href="../gos-log-write/" class="md-nav__link">
         
   
   
@@ -3449,7 +3468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/print/" class="md-nav__link">
+      <a href="../print/" class="md-nav__link">
         
   
   
@@ -3577,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/files/" class="md-nav__link">
+      <a href="../../files/" class="md-nav__link">
         
   
   
@@ -3604,7 +3623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/deletefile/" class="md-nav__link">
+      <a href="../deletefile/" class="md-nav__link">
         
   
   
@@ -3631,7 +3650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/downloadfileasync/" class="md-nav__link">
+      <a href="../downloadfileasync/" class="md-nav__link">
         
   
   
@@ -3658,7 +3677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/fileexist/" class="md-nav__link">
+      <a href="../fileexist/" class="md-nav__link">
         
   
   
@@ -3685,7 +3704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/getfromweborlocal/" class="md-nav__link">
+      <a href="../getfromweborlocal/" class="md-nav__link">
         
   
   
@@ -3712,7 +3731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/listfiles/" class="md-nav__link">
+      <a href="../listfiles/" class="md-nav__link">
         
   
   
@@ -3739,7 +3758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/makedirectory/" class="md-nav__link">
+      <a href="../makedirectory/" class="md-nav__link">
         
   
   
@@ -3766,7 +3785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/readfile/" class="md-nav__link">
+      <a href="../readfile/" class="md-nav__link">
         
   
   
@@ -3793,7 +3812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/unziparchive/" class="md-nav__link">
+      <a href="../unziparchive/" class="md-nav__link">
         
   
   
@@ -3820,7 +3839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/writefile/" class="md-nav__link">
+      <a href="../writefile/" class="md-nav__link">
         
   
   
@@ -3847,7 +3866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-delete/" class="md-nav__link">
+      <a href="../gos-file-delete/" class="md-nav__link">
         
   
   
@@ -3874,7 +3893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-download-async/" class="md-nav__link">
+      <a href="../gos-file-download-async/" class="md-nav__link">
         
   
   
@@ -3901,7 +3920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-exists/" class="md-nav__link">
+      <a href="../gos-file-exists/" class="md-nav__link">
         
   
   
@@ -3928,7 +3947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-get-from-web-or-local/" class="md-nav__link">
+      <a href="../gos-file-get-from-web-or-local/" class="md-nav__link">
         
   
   
@@ -3955,7 +3974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-list/" class="md-nav__link">
+      <a href="../gos-file-list/" class="md-nav__link">
         
   
   
@@ -3982,7 +4001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-mkdir/" class="md-nav__link">
+      <a href="../gos-file-mkdir/" class="md-nav__link">
         
   
   
@@ -4009,7 +4028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-read/" class="md-nav__link">
+      <a href="../gos-file-read/" class="md-nav__link">
         
   
   
@@ -4036,7 +4055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-unzip/" class="md-nav__link">
+      <a href="../gos-file-unzip/" class="md-nav__link">
         
   
   
@@ -4063,7 +4082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-file-write/" class="md-nav__link">
+      <a href="../gos-file-write/" class="md-nav__link">
         
   
   
@@ -4090,7 +4109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/gos-import/" class="md-nav__link">
+      <a href="../gos-import/" class="md-nav__link">
         
   
   
@@ -4117,7 +4136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/import/" class="md-nav__link">
+      <a href="../import/" class="md-nav__link">
         
   
   
@@ -4144,7 +4163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/symbols/require/" class="md-nav__link">
+      <a href="../require/" class="md-nav__link">
         
   
   
@@ -4213,7 +4232,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../examples/" class="md-nav__link ">
+            <a href="../../../examples/" class="md-nav__link ">
               
   
   
@@ -4314,7 +4333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/live-commando-markers/" class="md-nav__link">
+      <a href="../../../examples/live-commando-markers/" class="md-nav__link">
         
   
   
@@ -4341,7 +4360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/live-operative-probes/" class="md-nav__link">
+      <a href="../../../examples/live-operative-probes/" class="md-nav__link">
         
   
   
@@ -4368,7 +4387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/live-seer-triage/" class="md-nav__link">
+      <a href="../../../examples/live-seer-triage/" class="md-nav__link">
         
   
   
@@ -4395,7 +4414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/live-sage-pom-prediction/" class="md-nav__link">
+      <a href="../../../examples/live-sage-pom-prediction/" class="md-nav__link">
         
   
   
@@ -4422,7 +4441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/live-sentinel-resources/" class="md-nav__link">
+      <a href="../../../examples/live-sentinel-resources/" class="md-nav__link">
         
   
   
@@ -4516,7 +4535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/status-panel/" class="md-nav__link">
+      <a href="../../../examples/status-panel/" class="md-nav__link">
         
   
   
@@ -4543,7 +4562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/incoming-damage/" class="md-nav__link">
+      <a href="../../../examples/incoming-damage/" class="md-nav__link">
         
   
   
@@ -4570,7 +4589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/last-seen-marker/" class="md-nav__link">
+      <a href="../../../examples/last-seen-marker/" class="md-nav__link">
         
   
   
@@ -4597,7 +4616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/single-action/" class="md-nav__link">
+      <a href="../../../examples/single-action/" class="md-nav__link">
         
   
   
@@ -4624,7 +4643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/bounded-history/" class="md-nav__link">
+      <a href="../../../examples/bounded-history/" class="md-nav__link">
         
   
   
@@ -4666,7 +4685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sharing/" class="md-nav__link">
+      <a href="../../../guides/sharing/" class="md-nav__link">
         
   
   
@@ -4714,10 +4733,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#keep-each-update-finite" class="md-nav__link">
+  <a href="#signature" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Keep each update finite
+        Signature
       </span>
     </span>
   </a>
@@ -4725,32 +4744,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consume-new-events-not-old-history" class="md-nav__link">
+  <a href="#contract-and-usage" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Consume new events, not old history
+        Contract and usage
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contract and usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-identity-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Unit Identity And Lifetime
       </span>
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-then-draw" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#unit-method-reference" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Prepare, then draw
+        Unit Method Reference
       </span>
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#avoid-expensive-work-in-ticks" class="md-nav__link">
+  <a href="#related-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Avoid expensive work in ticks
+        Related documentation
       </span>
     </span>
   </a>
@@ -4772,19 +4808,156 @@
                 
                   
 
-<h1 id="performance-and-bounded-work">Performance and bounded work<a class="headerlink" href="#performance-and-bounded-work" title="Permanent link">&para;</a></h1>
-<h2 id="keep-each-update-finite">Keep each update finite<a class="headerlink" href="#keep-each-update-finite" title="Permanent link">&para;</a></h2>
-<p>Read one current world per callback. Prefer the player or selected target when that is all you need. Filter a unit query once and process a fixed maximum number of rows appropriate to the tool. Avoid nested all-unit scans and sorting the same unchanged data on every tick.</p>
-<p>Use <code>interval_ms</code> for display work that does not need every update. A 100 ms status-panel cadence is a sample choice, not a universal recommendation. Input-edge handling may need every update; keep it small. Events and commands also have their own latency requirements.</p>
-<h2 id="consume-new-events-not-old-history">Consume new events, not old history<a class="headerlink" href="#consume-new-events-not-old-history" title="Permanent link">&para;</a></h2>
-<p>Retain the combat cursor, process only returned records, and cap the number of batches per callback. Each call yields at most 64 events. If <code>more</code> remains true, leave the rest for a later update. Track <code>dropped</code>; incomplete input must not look like a complete fight.</p>
-<p>The <a href="../../examples/incoming-damage/">incoming damage example</a> uses at most four batches and keeps totals rather than storing every hit. A graph needs a fixed-capacity buffer or fixed time buckets. Never grow one table for an entire session without an eviction policy.</p>
-<h2 id="prepare-then-draw">Prepare, then draw<a class="headerlink" href="#prepare-then-draw" title="Permanent link">&para;</a></h2>
-<p>Maintain a small model and render from it. Use stable short drawing IDs so an update replaces an existing element. Use retained <code>frame=true</code> drawings for current callback output, and TTL drawings for intentionally persistent markers. Do not use long TTLs to disguise stale gameplay data.</p>
-<p>The documented limits are ceilings, not performance targets: at most 192 frame commands from one callback and 512 active drawing commands overall, with at most 32 callback owners retaining frame output. Replacement uses the same owner, target, draw kind and bounded ID, not the ID alone. Share the available budget with other scripts.</p>
-<h2 id="avoid-expensive-work-in-ticks">Avoid expensive work in ticks<a class="headerlink" href="#avoid-expensive-work-in-ticks" title="Permanent link">&para;</a></h2>
-<p>Do not download, unzip, read or write files, rebuild lookup maps, emit per-event logs, or run blocking loops inside frequent callbacks. Prepare static data at load time. Log meaningful transitions with a bounded rate; store totals in memory instead of writing every observation.</p>
-<p>Measure the tool in the real runtime with representative entity and event counts. A successful website build or an offline example check is not a game-performance test.</p>
+<h1 id="unitbasis">unit:basis<a class="headerlink" href="#unitbasis" title="Permanent link">&para;</a></h1>
+<p><strong>API version: <code>1.0.0</code></strong></p>
+<p>Read the current normalized yaw basis with forward, right and up axes, or nil.</p>
+<h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>unit:basis()
+</code></pre></div>
+<h2 id="contract-and-usage">Contract and usage<a class="headerlink" href="#contract-and-usage" title="Permanent link">&para;</a></h2>
+<h3 id="unit-identity-and-lifetime">Unit Identity And Lifetime<a class="headerlink" href="#unit-identity-and-lifetime" title="Permanent link">&para;</a></h3>
+<p><code>unit:name()</code> reads the prepared current-unit view of the same actor-name
+authority used by combat-event actor labels and <code>gos.actor_names</code>. It does not
+perform a name lookup on demand. Its snapshot can be older than a later metadata
+read, but does not introduce a second name resolver.</p>
+<p>Every <code>GosUnit</code> state-reading method raises <code>stale_unit</code> after its world
+generation expires. <code>unit:handle()</code> is the exception and remains available so
+the unit can be reacquired with a fresh <code>world:resolve(handle)</code>.</p>
+<p>Within one world, repeated lookups of the same unit compare equal with <code>==</code>.
+Values from different generations compare unequal even when their handles
+match.</p>
+<h3 id="unit-method-reference">Unit Method Reference<a class="headerlink" href="#unit-method-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unit:name()</code></td>
+<td>Prepared Core-authoritative actor display name or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:combat_style()</code></td>
+<td>Stable lowercase combat-style key or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:discipline()</code></td>
+<td>Display discipline name or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:handle()</code></td>
+<td>Opaque <code>unit:...</code> string or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:type()</code></td>
+<td><code>player</code>, <code>companion</code>, <code>npc</code>, <code>object</code>, or <code>unknown</code></td>
+</tr>
+<tr>
+<td><code>unit:reaction()</code></td>
+<td><code>friendly</code>, <code>neutral</code>, <code>hostile</code>, or <code>unclassified</code></td>
+</tr>
+<tr>
+<td><code>unit:toughness()</code></td>
+<td>Toughness label and numeric value, or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:is_local_player()</code></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>unit:is_current_target()</code></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>unit:is_on_screen()</code></td>
+<td>Boolean from the current prepared render snapshot</td>
+</tr>
+<tr>
+<td><code>unit:screen_position(anchor?)</code></td>
+<td><code>{x, y}</code> in render-viewport pixels, or <code>nil</code>; <code>top</code>, <code>center</code> (default), <code>bottom</code></td>
+</tr>
+<tr>
+<td><code>unit:hp()</code></td>
+<td>Health table or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:resource()</code></td>
+<td>Resource table or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:distance()</code></td>
+<td>Distance in game-world units or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:position()</code></td>
+<td>Position table or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:rotation()</code></td>
+<td>Current character yaw in radians or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:basis()</code></td>
+<td>Normalized yaw basis <code>{yaw, forward, right, up}</code>, or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:velocity()</code></td>
+<td>Velocity table or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:speed()</code></td>
+<td>Velocity magnitude or <code>nil</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>combat_style()</code> and <code>discipline()</code> are independently optional. Other players
+may expose a combat style while their current discipline is unavailable.
+<code>gos.abilities.loadout()</code> is the local-player source for exact selected ability
+membership.</p>
+<p>For remote players, a previously coherent discipline may remain available
+during a temporary acquisition gap; conflicting discipline evidence or a style
+change clears that retained value. There is no separate discipline freshness
+field. A display label is not proof of another player's complete learned kit.</p>
+<p><code>percent</code> is on the 0..100 scale, not a 0..1 ratio. For healing thresholds, validate <code>max &gt; 0</code> and compare <code>current / max</code> or use <code>percent</code> consistently.</p>
+<p>Health shape:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  current = number,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  max = number,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  percent = number | nil
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>}
+</code></pre></div>
+<p>Resource shape:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  current = number,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  max = number,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  percent = number | nil,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  kind = "force" | "focus" | "rage" | "energy" | "heat" |
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>         "ammo_plasma" | "ammo_ion" | "ammo_ap" | "ammo_normal" |
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>         "unknown"
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>}
+</code></pre></div>
+<p>Distance, position and velocity use the same game-world coordinate scale. At the current scale, one world unit is ten metres. Convert range thresholds exactly once:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">unit</span><span class="p">:</span><span class="nf">distance</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">metres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">distance</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">distance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">-- A 30-metre threshold is 3 world units.</span>
+</code></pre></div>
+<p>Do not compare a raw distance against a metre value. World-space circle radii use world units too; health/resource percentages still use 0..100.</p>
+<p>Position and velocity shapes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>local position = { x = number, y = number, z = number }
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>local velocity = { x = number, y = number, z = number, speed = number }
+</code></pre></div>
+<p><code>position()</code>, <code>rotation()</code>, and <code>basis()</code> consume one identity-checked prepared
+entity pose. Yaw is normalized to <code>[-math.pi, math.pi]</code>; zero faces world <code>-Z</code>.
+The upright basis is <code>forward={sin(yaw),0,-cos(yaw)}</code>,
+<code>right={cos(yaw),0,sin(yaw)}</code>, and <code>up={0,1,0}</code>. Core returns <code>nil</code> instead of
+retaining an earlier actor's pose. Raw transforms, pitch, roll, and scale are
+not exposed. This is geometry, not a replacement for server ability or
+positional conditions.</p>
+<h2 id="related-documentation">Related documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<p><a href="../../world/">Full world and units contract</a> | <a href="../../../examples/live-seer-triage/">Seer healing triage</a></p>
 
 
 
@@ -4846,10 +5019,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.tracking","search.highlight","content.code.copy","content.code.annotate","toc.follow"],"search":"../../assets/javascripts/workers/search.4101ac01.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.tracking","search.highlight","content.code.copy","content.code.annotate","toc.follow"],"search":"../../../assets/javascripts/workers/search.4101ac01.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.01903dbc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.01903dbc.min.js"></script>
       
     
   </body>

@@ -27,7 +27,7 @@
     
     
       
-        <title>Commando: persistent position markers - GoS-SWTOR Lua Docs v1.0.0</title>
+        <title>Standalone stealth: persistent position markers - GoS-SWTOR Lua Docs v1.0.0</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#commando-persistent-position-markers" class="md-skip">
+        <a href="#standalone-stealth-persistent-position-markers" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commando: persistent position markers
+              Standalone stealth: persistent position markers
             
           </span>
         </div>
@@ -779,6 +779,8 @@
       
         
       
+        
+      
     
     
     
@@ -915,6 +917,33 @@
     
   
   gos.world
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/unit-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:basis
 
     
   </span>
@@ -4212,7 +4241,7 @@
   <span class="md-ellipsis">
     
   
-  Commando: position markers
+  Standalone stealth: position markers
 
     
   </span>
@@ -4229,7 +4258,7 @@
   <span class="md-ellipsis">
     
   
-  Commando: position markers
+  Standalone stealth: position markers
 
     
   </span>
@@ -4723,41 +4752,57 @@
                 
                   
 
-<h1 id="commando-persistent-position-markers">Commando: persistent position markers<a class="headerlink" href="#commando-persistent-position-markers" title="Permanent link">&para;</a></h1>
-<p><strong>Live-script excerpt</strong> - from <code>commando_stealth_detector.lua</code>, used by the project's live-tested scripts. The functions below are copied unchanged.</p>
-<p>The Commando stealth detector draws two circles at a captured position. Expiry belongs to the recorded observation, so redrawing does not give an old marker a fresh lifetime. The same pattern works for encounter notes, last-seen locations and timed world annotations.</p>
+<h1 id="standalone-stealth-persistent-position-markers">Standalone stealth: persistent position markers<a class="headerlink" href="#standalone-stealth-persistent-position-markers" title="Permanent link">&para;</a></h1>
+<p><strong>Live-script excerpt</strong> - from <code>stealth_event_detector.lua</code>, used by the standalone Stealth Detector package. The function below is copied unchanged.</p>
+<p>The detector draws two frame-local circles at each captured position until its
+record expires. The same pattern works for encounter notes, last-seen locations
+and timed world annotations.</p>
 <p><a href="../code/live-commando-markers.lua">View or save the excerpt</a></p>
 <div class="admonition note">
 <p class="admonition-title">Integration fragment, not a standalone rotation</p>
-<p>This method belongs to the detector object. It requires <code>self.markers</code>, the module's <code>finite</code> and <code>valid_position</code> helpers, and an options table. Each marker contains <code>position</code>, <code>expiresAt</code> in monotonic seconds, and <code>eventName</code>. Keep the marker collection bounded in the producer; do not enable this excerpt by itself.</p>
+<p>This method belongs to the detector object. It requires <code>self.markers</code>,
+<code>self.stats</code>, <code>FRAME_TTL</code>, and the module's <code>finite</code> and <code>valid_position</code>
+helpers. Each marker contains <code>position</code>, <code>expiresAt</code>, <code>eventName</code>, and
+<code>serial</code>. Keep the marker collection bounded in the producer; do not enable
+this excerpt by itself.</p>
 </div>
 <h2 id="code-from-the-live-script">Code from the live script<a class="headerlink" href="#code-from-the-live-script" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span><span class="w"> </span><span class="nc">Detector</span><span class="p">:</span><span class="nf">draw_markers</span><span class="p">(</span><span class="nv">now</span><span class="p">,</span><span class="w"> </span><span class="nv">options</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nv">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">finite</span><span class="p">(</span><span class="nv">now</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mf">0.0</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">serial</span><span class="p">,</span><span class="w"> </span><span class="nv">marker</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">self</span><span class="p">.</span><span class="py">markers</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">marker</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">"table"</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">finite</span><span class="p">(</span><span class="nv">marker</span><span class="p">.</span><span class="py">expiresAt</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">expiresAt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nv">self</span><span class="p">.</span><span class="py">markers</span><span class="p">[</span><span class="nv">serial</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kr">elseif</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">options</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"table"</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">options</span><span class="p">.</span><span class="py">enabled</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="ow">and</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="py">draw_circle</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span><span class="ow">and</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nf">valid_position</span><span class="p">(</span><span class="nv">marker</span><span class="p">.</span><span class="py">position</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">remaining</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.max</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">expiresAt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">now</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">eventName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Force Camouflage"</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="s2">"orange"</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"magenta"</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="nb">pcall</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="py">draw_circle</span><span class="p">,</span><span class="w"> </span><span class="s2">"stl_o_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">serial</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="nv">world_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">position</span><span class="p">,</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">,</span><span class="w"> </span><span class="nv">segments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="nv">thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nv">ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">remaining</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="p">})</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nb">pcall</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="py">draw_circle</span><span class="p">,</span><span class="w"> </span><span class="s2">"stl_i_"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">serial</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="nv">world_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">position</span><span class="p">,</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.18</span><span class="p">,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">                </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">,</span><span class="w"> </span><span class="nv">segments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nv">thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="nv">ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">remaining</span><span class="p">,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="p">})</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="kr">end</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kr">end</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="kr">end</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nv">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">options</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"table"</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">handle</span><span class="p">,</span><span class="w"> </span><span class="nv">marker</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">self</span><span class="p">.</span><span class="py">markers</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">finite</span><span class="p">(</span><span class="nv">marker</span><span class="p">.</span><span class="py">expiresAt</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">expiresAt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nv">self</span><span class="p">.</span><span class="py">markers</span><span class="p">[</span><span class="nv">handle</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">options</span><span class="p">.</span><span class="py">enabled</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nf">valid_position</span><span class="p">(</span><span class="nv">marker</span><span class="p">.</span><span class="py">position</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nb">type</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="py">draw_circle</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"function"</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">eventName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Force Camouflage"</span><span class="w"> </span><span class="ow">and</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                </span><span class="s2">"orange"</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"magenta"</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">marker</span><span class="p">.</span><span class="py">serial</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">ring</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">({</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"o"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"i"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.18</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="kr">do</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">                </span><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="p">,</span><span class="w"> </span><span class="nv">accepted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">pcall</span><span class="p">(</span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="py">draw_circle</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">                    </span><span class="s2">"stl:"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">ring</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">":"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">suffix</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                        </span><span class="nv">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">marker</span><span class="p">.</span><span class="py">position</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                        </span><span class="nv">world_radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ring</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">                        </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">color</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">                        </span><span class="nv">segments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ring</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">                        </span><span class="nv">thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ring</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">                        </span><span class="nv">ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">FRAME_TTL</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                        </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">                    </span><span class="p">})</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">                </span><span class="kr">if</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">accepted</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">                    </span><span class="nv">self</span><span class="p">.</span><span class="py">stats</span><span class="p">.</span><span class="py">markerAccepted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">stats</span><span class="p">.</span><span class="py">markerAccepted</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                </span><span class="kr">else</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                    </span><span class="nv">self</span><span class="p">.</span><span class="py">stats</span><span class="p">.</span><span class="py">markerRejected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">stats</span><span class="p">.</span><span class="py">markerRejected</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="kr">end</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="kr">end</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="kr">end</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="kr">end</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="kr">end</span>
 </code></pre></div>
 <h2 id="how-to-use-the-pattern">How to use the pattern<a class="headerlink" href="#how-to-use-the-pattern" title="Permanent link">&para;</a></h2>
 <p>A top-level owner supplies <code>now = gos.time_ms() / 1000</code>. The observer records positions before units disappear; this draw method uses those copied coordinates rather than retaining a <code>GosUnit</code>.</p>
-<p>Call <code>detector:draw_markers(now, { enabled = true })</code> on the existing detector instance. Use the same clock for creation and expiry. Stable IDs replace previous drawings. Passing <code>enabled = false</code> stops refreshes; an already submitted TTL drawing can remain until its previously supplied TTL expires.</p>
-<p><code>radius = 0.8</code> is eight metres at the current world scale. The outer and inner circles make a single position easy to see. Orange distinguishes the source script's Force Camouflage marker; magenta is its other marker color. This is a last-observed position, not proof of where a hidden player is now.</p>
+<p>Call <code>detector:draw_markers(now, { enabled = true })</code> on the existing detector instance. Use the same clock for creation and expiry. Stable IDs replace previous frame drawings. Passing <code>enabled = false</code> removes the callback's marker contribution on its next publication.</p>
+<p><code>world_radius = 0.8</code> is eight metres at the current world scale. The outer and inner circles make a single position easy to see. Orange distinguishes Force Camouflage; magenta is the other marker color. This is a last-observed position, not proof of where a hidden player is now.</p>
 <h2 id="related-contracts">Related contracts<a class="headerlink" href="#related-contracts" title="Permanent link">&para;</a></h2>
 <p><a href="../../api/overlay/#draw-commands">World circles and TTL</a> | <a href="../../api/world/">World units and metres</a> | <a href="../last-seen-marker/">Complete manual marker script</a></p>
 

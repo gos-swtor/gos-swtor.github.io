@@ -781,6 +781,8 @@
       
         
       
+        
+      
     
     
     
@@ -917,6 +919,33 @@
     
   
   gos.world
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:basis
 
     
   </span>
@@ -4300,7 +4329,7 @@
   <span class="md-ellipsis">
     
   
-  Commando: position markers
+  Standalone stealth: position markers
 
     
   </span>
@@ -4815,7 +4844,7 @@ is within a 120-pixel cursor radius. It does not change the selected target.</p>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">dx</span><span class="p">,</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">cursor</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">cursor</span><span class="p">.</span><span class="py">y</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">dx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">dx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">dy</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="kr">then</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="nf">draw_circle</span><span class="p">(</span><span class="s2">"cursor_target"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nv">anchor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"screen"</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nv">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="nv">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">})</span>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="kr">end</span>

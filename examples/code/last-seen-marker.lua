@@ -12,8 +12,8 @@ gos.on_tick(function()
   local position = target and target:position() or nil
   if not position then return end
   gos.overlay.draw_circle("example_last_seen", {
-    world_space = true,
-    position = { x = position.x, y = position.y, z = position.z },
-    radius = 0.8, segments = 32, thickness = 2, color = "cyan", ttl = 8,
+    at = { world = { x = position.x, y = position.y, z = position.z } },
+    world_radius = 0.8, segments = 32, thickness = 2,
+    color = "cyan", ttl = 8,
   })
 end)

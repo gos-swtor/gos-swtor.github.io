@@ -34,7 +34,7 @@ gos.on_tick(function()
     if not batch.more then break end
   end
   gos.overlay.draw_text("example_damage", {
-    anchor = "screen", x = 30, y = 110, frame = true,
+    at = { screen = { x = 30, y = 110 } }, frame = true,
     text = string.format("Taken %.0f | hits %d | lost %d", total, samples, dropped),
     color = dropped > 0 and "orange" or "white", font_size = 16,
   })

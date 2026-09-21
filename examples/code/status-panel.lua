@@ -12,7 +12,7 @@ gos.on_tick(function()
   local text = (hp and hp.percent ~= nil)
     and string.format("Health: %.0f%%", hp.percent) or "Health: unavailable"
   gos.overlay.draw_text("example_status", {
-    anchor = "screen", x = 30, y = 80, text = text,
+    at = { screen = { x = 30, y = 80 } }, text = text,
     color = "cyan", font_size = 18, shadow = true, frame = true,
   })
 end, { interval_ms = 100 })

@@ -783,6 +783,8 @@
       
         
       
+        
+      
     
     
     
@@ -919,6 +921,33 @@
     
   
   gos.world
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:basis
 
     
   </span>
@@ -4322,7 +4351,7 @@
   <span class="md-ellipsis">
     
   
-  Commando: position markers
+  Standalone stealth: position markers
 
     
   </span>
@@ -4869,7 +4898,7 @@ returning nil; reacquire the unit from the current world before reading it.</p>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">unit</span><span class="p">:</span><span class="nf">screen_position</span><span class="p">()</span><span class="w"> </span><span class="c1">-- default center</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nv">gos</span><span class="p">.</span><span class="py">overlay</span><span class="p">.</span><span class="nf">draw_circle</span><span class="p">(</span><span class="s2">"unit_anchor"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nv">anchor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"screen"</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nv">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">point</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nv">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nv">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">})</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kr">end</span><span class="p">)</span>
@@ -4950,7 +4979,11 @@ can return a position even when the cursor query is unavailable. See the
 </tr>
 <tr>
 <td><code>unit:rotation()</code></td>
-<td>Local-player / current-target yaw in radians or <code>nil</code></td>
+<td>Current character yaw in radians or <code>nil</code></td>
+</tr>
+<tr>
+<td><code>unit:basis()</code></td>
+<td>Normalized yaw basis <code>{yaw, forward, right, up}</code>, or <code>nil</code></td>
 </tr>
 <tr>
 <td><code>unit:velocity()</code></td>
@@ -4998,10 +5031,13 @@ field. A display label is not proof of another player's complete learned kit.</p
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>local position = { x = number, y = number, z = number }
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>local velocity = { x = number, y = number, z = number, speed = number }
 </code></pre></div>
-<p><code>rotation()</code> is available for the local player and the current character target,
-is normalized to <code>[-math.pi, math.pi]</code>, and uses zero for world <code>-Z</code>
-(<code>forward = { x = math.sin(yaw), z = -math.cos(yaw) }</code>). The selected target and local player can expose yaw; other units or unavailable spatial samples return <code>nil</code>. No heading is inferred from movement or a previous target.
-This is geometry, not a replacement for server ability/positional conditions.</p>
+<p><code>position()</code>, <code>rotation()</code>, and <code>basis()</code> consume one identity-checked prepared
+entity pose. Yaw is normalized to <code>[-math.pi, math.pi]</code>; zero faces world <code>-Z</code>.
+The upright basis is <code>forward={sin(yaw),0,-cos(yaw)}</code>,
+<code>right={cos(yaw),0,sin(yaw)}</code>, and <code>up={0,1,0}</code>. Core returns <code>nil</code> instead of
+retaining an earlier actor's pose. Raw transforms, pitch, roll, and scale are
+not exposed. This is geometry, not a replacement for server ability or
+positional conditions.</p>
 <h2 id="related-documentation">Related documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
 <p><a href="../../world/">Full world and units contract</a> | <a href="../../../examples/live-seer-triage/">Seer healing triage</a></p>
 

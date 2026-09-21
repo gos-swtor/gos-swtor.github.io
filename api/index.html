@@ -781,6 +781,8 @@
       
         
       
+        
+      
     
     
     
@@ -917,6 +919,33 @@
     
   
   gos.world
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./symbols/unit-basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:basis
 
     
   </span>
@@ -4199,7 +4228,7 @@
   <span class="md-ellipsis">
     
   
-  Commando: position markers
+  Standalone stealth: position markers
 
     
   </span>
@@ -4762,6 +4791,10 @@
 <td>Acquire the current generation-bound world and its optional player and target.</td>
 </tr>
 <tr>
+<td><a href="symbols/unit-basis/"><code>unit:basis</code></a></td>
+<td>Read the current normalized yaw basis with forward, right and up axes, or nil.</td>
+</tr>
+<tr>
 <td><a href="symbols/unit-combat-style/"><code>unit:combat_style</code></a></td>
 <td>Read a stable lowercase combat-style key, or nil.</td>
 </tr>
@@ -4811,7 +4844,7 @@
 </tr>
 <tr>
 <td><a href="symbols/unit-rotation/"><code>unit:rotation</code></a></td>
-<td>Read available local-player or selected-character yaw in radians, or nil.</td>
+<td>Read current character yaw in radians, or nil when its prepared pose is unavailable.</td>
 </tr>
 <tr>
 <td><a href="symbols/unit-screen-position/"><code>unit:screen_position</code></a></td>
@@ -5023,31 +5056,31 @@
 <tbody>
 <tr>
 <td><a href="symbols/gos-overlay-draw-bar/"><code>gos.overlay.draw_bar</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw a bounded bar at a shared screen, world or unit PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-circle/"><code>gos.overlay.draw_circle</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw a screen-radius or world-radius circle at a shared PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-image/"><code>gos.overlay.draw_image</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw an image at a shared screen, world or unit PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-line/"><code>gos.overlay.draw_line</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw a line between independent screen, world or unit PointSpecs.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-rect/"><code>gos.overlay.draw_rect</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw a rectangle at a shared screen, world or unit PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-rectangle/"><code>gos.overlay.draw_rectangle</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Alias draw_rect at a shared screen, world or unit PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-draw-text/"><code>gos.overlay.draw_text</code></a></td>
-<td>Submit or refresh a bounded drawing command using stable IDs, current units or screen coordinates.</td>
+<td>Draw text at a shared screen, world or unit PointSpec.</td>
 </tr>
 <tr>
 <td><a href="symbols/gos-overlay-interact/"><code>gos.overlay.interact</code></a></td>
