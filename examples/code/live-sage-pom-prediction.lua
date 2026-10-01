@@ -48,7 +48,8 @@
     local function observe_presence_lifecycle(options, world)
         local player = world and world.player or nil
         local player_handle = safe_method(player, "handle")
-        local throw_info = gos.abilities.info("Telekinetic Throw")
+        local throw_actual = Mirror.ability(CurrentLoadout, "Telekinetic Throw")
+        local throw_info = throw_actual and gos.abilities.info(throw_actual) or nil
         local throw_handle = type(throw_info) == "table" and
             throw_info.activation_handle or nil
         local throw_name = type(throw_info) == "table" and

@@ -46,6 +46,12 @@
         <loc>https://gos-swtor.github.io/api/symbols/gos-target-select/</loc>
       </url>
       <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-target-status/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-target-cancel/</loc>
+      </url>
+      <url>
         <loc>https://gos-swtor.github.io/api/symbols/gos-world/</loc>
       </url>
       <url>
@@ -95,6 +101,9 @@
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/symbols/unit-speed/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/unit-target/</loc>
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/symbols/unit-toughness/</loc>
@@ -194,6 +203,18 @@
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/symbols/gos-abilities-release-command/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/inventory/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-inventory-snapshot/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-inventory-bag/</loc>
+      </url>
+      <url>
+        <loc>https://gos-swtor.github.io/api/symbols/gos-inventory-materials/</loc>
       </url>
       <url>
         <loc>https://gos-swtor.github.io/api/events/</loc>

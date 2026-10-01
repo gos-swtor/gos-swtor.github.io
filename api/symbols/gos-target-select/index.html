@@ -16,7 +16,7 @@
         <link rel="prev" href="../gos-actor-names/">
       
       
-        <link rel="next" href="../gos-world/">
+        <link rel="next" href="../gos-target-status/">
       
       
         
@@ -528,6 +528,8 @@
       
         
       
+        
+      
     
     
     
@@ -785,6 +787,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -970,10 +978,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gostargetselectunit" class="md-nav__link">
+  <a href="#gostargetselectunit-target_intent" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>gos.target.select(unit)</code>
+        <code>gos.target.select(unit, target_intent?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gostargetstatusrequest_handle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.target.status(request_handle)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gostargetcancelrequest_handle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.target.cancel(request_handle)</code>
       </span>
     </span>
   </a>
@@ -1000,6 +1030,60 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-target-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.target.status
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-target-cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.target.cancel
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1452,6 +1536,33 @@
     
   
   unit:speed
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:target
 
     
   </span>
@@ -2684,7 +2795,7 @@
   <span class="md-ellipsis">
     
   
-  Combat events
+  Inventory
 
     
   </span>
@@ -2696,6 +2807,179 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Inventory
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.snapshot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-bag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.bag
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat events
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2861,10 +3145,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -2881,8 +3165,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3231,10 +3515,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -3251,8 +3535,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3548,10 +3832,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
         
           
-          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
             
   
   
@@ -3568,8 +3852,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4745,10 +5029,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gostargetselectunit" class="md-nav__link">
+  <a href="#gostargetselectunit-target_intent" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>gos.target.select(unit)</code>
+        <code>gos.target.select(unit, target_intent?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gostargetstatusrequest_handle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.target.status(request_handle)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gostargetcancelrequest_handle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>gos.target.cancel(request_handle)</code>
       </span>
     </span>
   </a>
@@ -4788,22 +5094,78 @@
 
 <h1 id="gostargetselect">gos.target.select<a class="headerlink" href="#gostargetselect" title="Permanent link">&para;</a></h1>
 <p><strong>API version: <code>1.0.0</code></strong></p>
+<p><strong>Source review: 2026-10-01</strong></p>
 <p>Request an intentional persistent selected-target change; confirm it in a later snapshot.</p>
 <h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gos.target.select(unit)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gos.target.select(unit, target_intent)
 </code></pre></div>
 <h2 id="contract-and-usage">Contract and usage<a class="headerlink" href="#contract-and-usage" title="Permanent link">&para;</a></h2>
-<h3 id="gostargetselectunit"><code>gos.target.select(unit)</code><a class="headerlink" href="#gostargetselectunit" title="Permanent link">&para;</a></h3>
-<p>Requests a persistent change to the selected target.
-The argument must be a current-generation non-object <code>GosUnit</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="p">,</span><span class="w"> </span><span class="nb">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gos</span><span class="p">.</span><span class="py">target</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="nv">ally</span><span class="p">)</span>
+<h3 id="gostargetselectunit-target_intent"><code>gos.target.select(unit, target_intent?)</code><a class="headerlink" href="#gostargetselectunit-target_intent" title="Permanent link">&para;</a></h3>
+<p>Requests a persistent selected-target change for a current-generation non-object
+<code>GosUnit</code>. Keep the optional third return value to observe the request:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="p">,</span><span class="w"> </span><span class="nb">error</span><span class="p">,</span><span class="w"> </span><span class="nv">request_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gos</span><span class="p">.</span><span class="py">target</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="nv">ally</span><span class="p">)</span>
 </code></pre></div>
-<p><code>true, nil</code> means the request was queued or the unit was already selected. It
-does not claim that SWTOR applied the request; confirm a later
-<code>gos.world().current_target</code> or <code>unit:is_current_target()</code> snapshot. Operational failures return <code>false</code> with <code>busy</code>, <code>invalid_target</code>, <code>stale_world</code>, or <code>unavailable</code>. Invalid argument types and stale <code>GosUnit</code> userdata instead raise Lua errors; stale userdata raises <code>stale_unit</code> before a selection request is submitted.
-The request is manual target intent and remains selected. It is deliberately
-separate from explicit ability targeting: default explicit casts never call this
-API or mutate the player's selected target.</p>
+<p><code>true, nil, handle</code> means a request was accepted, not that selection occurred.
+<code>true, nil, nil</code> normally means the current snapshot already selects that unit.
+The handle is an opaque string, distinct from a unit or ability-command handle.
+Poll <code>gos.target.status(handle)</code> on later ticks instead of submitting every tick.</p>
+<p>Operational failures return <code>false, reason, nil</code>, with <code>busy</code>, <code>invalid_target</code>,
+<code>stale_world</code>, <code>stale_intent</code>, <code>request_capacity</code>, or <code>unavailable</code>. Wrong argument
+types and stale userdata raise Lua errors (<code>stale_unit</code> for expired units).
+Only one or two arguments are accepted. Omitted/nil <code>target_intent</code> remains
+supported for intentional script-driven selection.</p>
+<p>For a captured overlay click, pass the immutable <code>state.target_intent</code> ticket
+from <code>gos.overlay.interact</code>. It is bound to the submitting script instance,
+pressed entity and session. Another entity/session/script, a newer native user
+selection, or a ticket at least two seconds old produces <code>stale_intent</code>.
+Repeating a still-valid ticket returns its retained receipt rather than replaying
+the click. Never replace a rejected ticket with a ticketless retry.</p>
+<p>Queued requests have a two-second dispatch/observation window, measured from the
+click for a ticket or from submission otherwise. Busy shared work can defer
+progress. A newer request can supersede this script's still-cancellable queued
+request; it does not cancel another script's dispatched work. Capacity is bounded
+to 64 retained target requests. The deadline does not forcibly stop running work.</p>
+<p>Selection persists and is separate from explicit ability targeting: default
+explicit casts do not call this API or persistently change the selected target.
+See <code>gos.target.status</code> for confirmation and <code>gos.target.cancel</code> for safe queued
+cancellation.</p>
+<h3 id="gostargetstatusrequest_handle"><code>gos.target.status(request_handle)</code><a class="headerlink" href="#gostargetstatusrequest_handle" title="Permanent link">&para;</a></h3>
+<p>Reads this script instance's retained request without changing selection.
+Use the opaque string returned by <code>gos.target.select</code>. Malformed strings,
+unknown/evicted requests, and requests owned by another script report
+<code>known=false</code>, <code>terminal=true</code>, <code>state="unknown"</code>; they are not success receipts.
+A non-string argument can raise a Lua argument error.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  known = boolean, terminal = boolean,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  state = "unknown" | "queued" | "dispatched" | "observed" |
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>          "expired" | "cancelled" | "superseded" | "failed" | "unconfirmed",
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  request_handle = string | nil, target_handle = "unit:..." | nil,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  invocation_returned = boolean, callback_completed = boolean,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  blocker = table | nil
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>}
+</code></pre></div>
+<p><code>queued</code> and <code>dispatched</code> are nonterminal. <code>observed</code> means a later prepared
+selection matched this request's target and session within its observation
+window. It does not promise the target is still selected now. <code>expired</code> means
+the queued request expired before dispatch; <code>cancelled</code> and <code>superseded</code> describe
+successfully retired queued intent. <code>failed</code> reports a pre-invocation failure.
+<code>unconfirmed</code> means the request may have taken effect but confirmation is missing,
+including a completed invocation without an in-window matching observation or
+a session change. Do not equate it with cancellation or automatically replay it.</p>
+<p><code>invocation_returned</code> and <code>callback_completed</code> describe invocation progress,
+not selection proof. A dispatched request is not forcibly interrupted when its
+deadline passes. <code>blocker</code> is optional diagnostic-only metadata: its internal
+keys and numeric values are not a stable scripting contract. Branch on the
+public state, not those internals. Receipts have bounded retention; save only
+the result information your UI needs, and do not carry requests across reloads.</p>
+<h3 id="gostargetcancelrequest_handle"><code>gos.target.cancel(request_handle)</code><a class="headerlink" href="#gostargetcancelrequest_handle" title="Permanent link">&para;</a></h3>
+<p>Requests cancellation of this script's still-queued selection request. Returns
+the same status shape as <code>gos.target.status</code>, with an additional <code>ok</code> boolean.
+<code>ok=true</code> confirms successful cancellation before invocation; <code>ok=false</code> may
+mean dispatch already began, the request is terminal, it is not owned by this
+script, or the handle is unknown. Inspect the returned state. Cancellation does
+not undo a selection that already happened and does not stop dispatched work.
+A failed cancellation is not permission to forget or replay a pending request.</p>
 <h2 id="related-documentation">Related documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
 <p><a href="../../world/">Full world and units contract</a> | <a href="../../../examples/live-seer-triage/">Seer healing triage</a></p>
 
