@@ -102,6 +102,61 @@ returns the partial array plus a warning string.
 local names, error_or_warning = ListFiles(SCRIPT_PATH, ".lua")
 ```
 
+### `gos.file.write_async(bytes, path, mode)`
+
+Queues a binary write on Core's serialized storage worker and returns an opaque
+handle, or `nil, reason` on refusal. No disk work runs in the Lua callback.
+`xb` creates exclusively and refuses an existing file; `ab` appends. Other modes
+are rejected. One request accepts at most 8 KiB; a resulting file must be at most
+256 KiB. Approved sandbox roots and path restrictions also apply on the worker.
+Arguments must be strings, with a path of at most 1024 bytes. Wrong counts,
+types, bounds, or modes return `nil, reason` without accepting a request.
+
+### `gos.file.read_async(path)`
+
+Queues a binary read and returns a handle or `nil, reason`. Files larger than
+256 KiB fail. Accepted operations execute in submission order, including a read
+used to inspect an earlier uncertain write.
+
+### `gos.file.list_async(path, extension_filter?)`
+
+Queues a nonrecursive directory listing and returns a handle or `nil, reason`.
+The optional filter is an exact extension such as `.tsv`. Results contain at most
+128 immediate regular files. Always check `truncated == false`; reaching the
+matching-file limit or inspecting 16,384 entries can leave an incomplete list.
+A matching file over 256 KiB fails this bounded archive operation.
+The filter must start with `.` and contain at most 32 bytes, without wildcards,
+path separators, a colon, or line breaks. Arguments are strings; an omitted or
+`nil` filter means no extension filter.
+
+### `gos.file.operation(handle)`
+
+Polls an accepted operation without disk access. The result contains `state`:
+`queued`, `running`, `succeeded`, or `failed`. Terminal results include:
+
+| Field | Meaning |
+| --- | --- |
+| `bytes` | Bytes transferred by this operation; required for successful writes. |
+| `data` | Binary read contents, including embedded zero bytes. |
+| `files` | Listing entries `{name, bytes}`. |
+| `truncated` | Whether the listing is incomplete. |
+| `code`, `reason` | Machine-readable result and explanation: `none`, `not_found`, `file_exists`, `denied`, `too_large`, or `io_error`. |
+
+Before completion only `state` is present. All fields in this table are emitted
+for a terminal result, even when not applicable: a non-read has empty `data`, a
+non-list has empty `files`, and `bytes` is the transferred-byte count rather than
+the number of listed entries. An empty successful read remains valid binary data.
+
+Handles belong to one script instance. Foreign, expired, or unknown handles return
+`nil, reason`; a reloaded instance cannot poll its predecessor's handles. Queued
+and running operations remain pollable, and accepted writes finish after a Lua
+reload or disable. Core retains at most 64 operations and may evict terminal
+results to admit work. Queue saturation refuses new submissions.
+
+A failed accepted write may have written some or all bytes. Inspect it before
+retrying; Core does not replay it. Success includes closing the file but does not
+promise power-loss durability. These four functions have no global aliases.
+
 ### `DownloadFileAsync(url, path, callback?)`
 
 Alias: `gos.file.download_async(url, path, callback?)`.

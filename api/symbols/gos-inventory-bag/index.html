@@ -16,7 +16,7 @@
         <link rel="prev" href="../gos-inventory-snapshot/">
       
       
-        <link rel="next" href="../gos-inventory-materials/">
+        <link rel="next" href="../gos-inventory-equipped/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>gos.inventory.bag - GoS-SWTOR Lua Docs v1.0.0</title>
+        <title>gos.inventory.bag - GoS-SWTOR Lua Docs v1.2.0</title>
       
     
     
@@ -95,9 +95,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.2.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.2.0" data-md-component="logo">
       
-  <img src="../../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.0.0">
+  <img src="../../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.2.0">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GoS-SWTOR Lua Docs v1.0.0
+            GoS-SWTOR Lua Docs v1.2.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -193,12 +193,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../../.." title="GoS-SWTOR Lua Docs v1.2.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.2.0" data-md-component="logo">
       
-  <img src="../../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.0.0">
+  <img src="../../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.2.0">
 
     </a>
-    GoS-SWTOR Lua Docs v1.0.0
+    GoS-SWTOR Lua Docs v1.2.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -528,6 +528,8 @@
       
         
       
+        
+      
     
     
     
@@ -732,6 +734,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1110,6 +1122,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../unit-effective-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:effective_level
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../unit-handle/" class="md-nav__link">
         
   
@@ -1191,6 +1230,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../unit-is-group-member/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:is_group_member
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-is-level-shifted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:is_level_shifted
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../unit-is-local-player/" class="md-nav__link">
         
   
@@ -1253,6 +1346,33 @@
     
   
   unit:item_rating
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:level
 
     
   </span>
@@ -1577,6 +1697,33 @@
     
   
   world:resolve
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  world:instance
 
     
   </span>
@@ -2710,6 +2857,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2903,6 +3058,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="gos.inventory.bag()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-stats-and-equipment-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Item stats and equipment facts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2925,6 +3097,114 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-equipped/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.equipped
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-player-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.player_stats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.compare
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-inventory-presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.presentation
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2982,6 +3262,38 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3002,7 +3314,7 @@
   <span class="md-ellipsis">
     
   
-  Combat events
+  Galactic Trade Network
 
     
   </span>
@@ -3014,6 +3326,611 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Galactic Trade Network
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gtn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.snapshot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.refresh
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-popular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.popular
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-recent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.recent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-favorites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.favorites
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.sort
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.details
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-favorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.favorite
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.buy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-select-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.select_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-clear-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.clear_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-quote-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.quote_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-cancel-sale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.cancel_sale
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-claim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.claim
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.command
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-gtn-cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.cancel
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat events
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3169,6 +4086,8 @@
       
         
       
+        
+      
     
     
     
@@ -3179,10 +4098,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -3199,8 +4118,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3459,6 +4378,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../gos-overlay-inventory-marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.overlay.inventory_marker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gos-overlay-unit-label/" class="md-nav__link">
         
   
@@ -3549,10 +4495,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
         
           
-          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
             
   
   
@@ -3569,8 +4515,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3856,6 +4802,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3866,10 +4820,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
         
           
-          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
             
   
   
@@ -3886,8 +4840,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4308,6 +5262,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../gos-file-list-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.list_async
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gos-file-mkdir/" class="md-nav__link">
         
   
@@ -4335,6 +5316,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../gos-file-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.operation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gos-file-read/" class="md-nav__link">
         
   
@@ -4343,6 +5351,33 @@
     
   
   gos.file.read
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-file-read-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.read_async
 
     
   </span>
@@ -4397,6 +5432,33 @@
     
   
   gos.file.write
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gos-file-write-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.write_async
 
     
   </span>
@@ -5068,6 +6130,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="gos.inventory.bag()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#item-stats-and-equipment-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Item stats and equipment facts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5102,16 +6181,26 @@
                   
 
 <h1 id="gosinventorybag">gos.inventory.bag<a class="headerlink" href="#gosinventorybag" title="Permanent link">&para;</a></h1>
-<p>Read occupied carried-bag slots and optional item metadata.</p>
+<p>Read current carried-bag rows with optional item identity, metadata, stats and equipment facts.</p>
 <h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gos.inventory.bag()
 </code></pre></div>
 <h2 id="contract-and-usage">Contract and usage<a class="headerlink" href="#contract-and-usage" title="Permanent link">&para;</a></h2>
-<p>Read carried-bag and Materials storage snapshots during a tick. These queries
-do not change items and do not cover equipped gear or bank contents.
-All three functions take no arguments; extra arguments raise a Lua error.
-Repeated reads in one Lua tick use the same prepared snapshot, not an immediate
-client refresh. Tables can be retained as historical data, but are not live views.</p>
+<p>Read the player's carried bag, equipped gear, Materials storage, and prepared
+character stats during a tick. Compare observed item contributions without
+equipping an item. These functions are read-only: they do not equip gear,
+transfer bank/storage items, or operate companions. The separate
+<a href="../../gtn/">GTN interface</a> can use current carried-bag identities for sell listings.</p>
+<p><code>snapshot</code>, <code>bag</code>, <code>materials</code>, <code>equipped</code>, <code>player_stats</code>, and <code>presentation</code>
+take no arguments; extra arguments raise a Lua error. <code>compare</code> requires exactly
+two integer slot arguments. The bag/equipment/stat queries use the prepared
+snapshot for the current Lua tick, rather than forcing a client refresh.
+<code>presentation</code> reads an independently updated native UI publication.
+Returned tables can be retained as history, but are not live views.</p>
+<p>Bag, equipped, and Materials items with known catalog identity expose <code>catalog_key</code>:
+<code>itemdef:</code> followed by 16 uppercase hexadecimal digits. This key is stable across
+processes and matches the same GTN catalog item. It is descriptive data, never a
+replacement for a current item or prototype handle when submitting commands.</p>
 <h3 id="gosinventorybag_1"><code>gos.inventory.bag()</code><a class="headerlink" href="#gosinventorybag_1" title="Permanent link">&para;</a></h3>
 <p>Returns the bag subtable from the prepared inventory snapshot. Check <code>status</code>
 before reading any other field. <code>pending</code> and <code>unavailable</code> contain only <code>status</code>;
@@ -5123,25 +6212,40 @@ represents an observed empty bag.</p>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  items = {
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    {
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      slot = integer, handle = "item:...",
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      prototype_handle = "item_prototype:...", prototype = string | nil,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      quantity = integer | nil, name = string | nil,
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      name_source = "client" | "en_us_catalog" | nil,
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      name_status = "pending" | "ready" | "unavailable",
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      item_rating = integer | nil, item_level = integer | nil,
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      enhanced_item_level = integer | nil, required_level = integer | nil,
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      durability = integer | nil, max_durability = integer | nil,
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>      quality = string | nil, bound = boolean | nil,
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      weapon_damage_min = number | nil, weapon_damage_max = number | nil,
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      shield_chance_raw = number | nil, shield_absorb_raw = number | nil
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    }, ...
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  }
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>}
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      prototype_handle = "item_prototype:...", catalog_key = "itemdef:..." | nil,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      prototype = string | nil,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      quantity = integer | nil, name = string | nil,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      name_source = "client" | "en_us_catalog" | nil,
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      name_status = "pending" | "ready" | "unavailable",
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      item_rating = integer | nil, item_level = integer | nil,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      enhanced_item_level = integer | nil, required_level = integer | nil,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>      durability = integer | nil, max_durability = integer | nil,
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      quality = string | nil, bound = boolean | nil, armor_rating = integer | nil,
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      weapon_damage_min = number | nil, weapon_damage_max = number | nil,
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>      shield_chance_raw = number | nil, shield_absorb_raw = number | nil,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>      nominal_weapon = table,
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>      slot_type = string | nil,
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>      stats = table, shell_stats = table, adjustments = table,
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>      context_revision = integer, sampled_ms = integer | nil,
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>      augment_slot_available = boolean | nil,
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>      can_equip = boolean | nil, equip_result = string | nil,
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>      slot_acceptance = { [equipped_slot] = boolean, ... },
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>      equip_effects_status = "ready" | "unavailable",
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>      has_special_effects = boolean | nil,
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>      on_equip_handle = "item_ability:..." | nil,
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>      set_bonus_handle = "item_set:..." | nil,
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>      components = table
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    }, ...
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  }
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>}
 </code></pre></div>
 <p><code>items</code> is a dense Lua array of occupied slots, sorted by physical <code>slot</code>.
 Slots are one-based, but an array index is not the physical slot when there are
 empty spaces. <code>used</code> counts occupied slots, not the sum of item quantities.
 Handles are opaque identities, not addresses; neither item handle can be passed
-to <code>world:resolve</code>, which accepts unit handles only. Do not parse or construct them.</p>
+to <code>world:resolve</code>, which accepts unit handles only. Do not parse or construct them.
+The native bag bound is 512 slots. Use observed <code>capacity</code> for the current bag;
+the bound does not imply that all 512 slots are unlocked.</p>
 <p>Optional metadata arrives independently. Missing <code>quantity</code> does not mean one;
 missing <code>bound</code> is unknown, whereas <code>bound=false</code> is an observed false value.
 <code>names_complete</code> means every occupied row has a name, not that all metadata is
@@ -5153,7 +6257,49 @@ are omitted. The two shield fields are unnormalized client floats: do not
 interpret them as percentages or 0..1 ratios without separate evidence.
 Revisions identify changed prepared data, including metadata updates. Reset
 consumer caches across <code>gos.world().session_generation</code> changes; revisions are
-not an account-wide inventory history or a promise that an item still exists.</p>
+not an account-wide inventory history or a promise that an item still exists.
+Equipment/loadout changes can invalidate prepared stat samples before the next
+successful metadata update. Item/prototype/component/effect handles are scoped
+to the current Core process and domain; <code>catalog_key</code> is the cross-process
+static-data identity. Reacquire current rows after a character/session change.</p>
+<h4 id="item-stats-and-equipment-facts">Item stats and equipment facts<a class="headerlink" href="#item-stats-and-equipment-facts" title="Permanent link">&para;</a></h4>
+<p><code>stats</code>, <code>shell_stats</code>, and <code>adjustments</code> each have this independent shape:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{ status = "pending" | "ready" | "unavailable",
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  values = { [stat_key] = number, ... } | nil }
+</code></pre></div>
+<p><code>values</code> exists only when that particular stat observation is ready. The native
+stat-map bound is 517 entries. Common keys are <code>mastery</code>, <code>endurance</code>, <code>presence</code>,
+<code>armor</code>, <code>power</code>, <code>critical</code>, <code>alacrity</code>, <code>accuracy</code>, <code>defense</code>, <code>shield</code>, <code>absorb</code>,
+<code>force_power</code>, and <code>tech_power</code>. Other keys retain their client enum names, such
+as <code>STAT_cbt_force_accuracy</code>; the values use that stat's native units. There is
+no public <code>complete</code> flag on these tables.</p>
+<p>These are observed item contributions, not a projected change to the player's
+final character sheet. <code>shell_stats</code> and <code>adjustments</code> are separate observations;
+do not blindly add them to <code>stats</code> and count contributions twice.</p>
+<p><code>nominal_weapon</code> always contains <code>status</code>. When ready, it also contains
+<code>scope="nominal_item"</code>, <code>applicable</code>, <code>minimum</code>, and <code>maximum</code>. Confirmed
+non-weapons have <code>applicable=false</code> and zero nominal damage. Nominal weapon
+values describe the item independently of contextual raw
+<code>weapon_damage_min</code>/<code>weapon_damage_max</code>; they do not predict final sheet damage.</p>
+<p><code>can_equip</code> is present only when the client supplied an equipment result.
+<code>equip_result</code> is the available client result name, such as <code>conResultOk</code> or
+<code>conResultItemRequiresLevel</code>. Check both general eligibility and the destination:
+<code>slot_acceptance[physical_equipped_slot]</code> is a sparse numeric-key table, with
+<code>true</code> for observed acceptance, <code>false</code> for observed rejection, and <code>nil</code> for
+unknown. Iterate explicit known destinations or <code>pairs</code>, not <code>ipairs</code>.
+Neither field submits an equipment command or proves a later command will work.</p>
+<p><code>equip_effects_status="ready"</code> means both the on-equip and set-bonus identities
+were observed, including an observed absence. Only then is <code>has_special_effects</code>
+present. Nonzero identities may publish <code>on_equip_handle</code> and <code>set_bonus_handle</code>
+independently. Missing identities must not be interpreted as no special effects;
+these fields do not describe proc behavior, value a tactical, or predict DPS/HPS.</p>
+<p><code>components</code> has its own <code>status</code>, plus a dense <code>items</code> array only when ready.
+It is bounded to six observed components. Each component has <code>slot</code>, an opaque
+<code>item_component:...</code> <code>handle</code>, optional name/rating/level/durability/quality/binding/
+armor/weapon/shield metadata, <code>name_status</code>, <code>nominal_weapon</code>, and its own <code>stats</code>.
+Component rows do not publish an item <code>prototype_handle</code>, <code>catalog_key</code>, or
+component-type field. A ready empty component array is distinct from unavailable
+component data. <code>augment_slot_available</code> remains a separate optional boolean.</p>
 <h2 id="related-documentation">Related documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
 <p><a href="../../inventory/">Full inventory contract</a></p>
 

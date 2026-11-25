@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Read the Operative Medicine routine's Lua helper for maintaining two Kolto Probe stacks and refreshing them before expiry while preserving healing priorities.">
+        <meta name="description" content="Inspect Kolto Probe stacks and refresh timing, and see when Operative Medicine prioritizes patient rescue over HoT upkeep.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Operative Medicine Lua Healing - Kolto Probe Stacks - GoS-SWTOR Lua Docs v1.0.0</title>
+        <title>Operative Medicine Lua Healing - Kolto Probe Stacks - GoS-SWTOR Lua Docs v1.2.0</title>
       
     
     
@@ -95,9 +95,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../.." title="GoS-SWTOR Lua Docs v1.2.0" class="md-header__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.2.0" data-md-component="logo">
       
-  <img src="../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.0.0">
+  <img src="../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.2.0">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GoS-SWTOR Lua Docs v1.0.0
+            GoS-SWTOR Lua Docs v1.2.0
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -193,12 +193,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GoS-SWTOR Lua Docs v1.0.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.0.0" data-md-component="logo">
+    <a href="../.." title="GoS-SWTOR Lua Docs v1.2.0" class="md-nav__button md-logo" aria-label="GoS-SWTOR Lua Docs v1.2.0" data-md-component="logo">
       
-  <img src="../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.0.0">
+  <img src="../../assets/images/core-crest.png" alt="GoS-SWTOR Lua Docs v1.2.0">
 
     </a>
-    GoS-SWTOR Lua Docs v1.0.0
+    GoS-SWTOR Lua Docs v1.2.0
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -526,6 +526,8 @@
       
         
       
+        
+      
     
     
     
@@ -730,6 +732,16 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1108,6 +1120,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/unit-effective-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:effective_level
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/unit-handle/" class="md-nav__link">
         
   
@@ -1189,6 +1228,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/unit-is-group-member/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:is_group_member
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/unit-is-level-shifted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:is_level_shifted
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/unit-is-local-player/" class="md-nav__link">
         
   
@@ -1251,6 +1344,33 @@
     
   
   unit:item_rating
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/unit-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  unit:level
 
     
   </span>
@@ -1575,6 +1695,33 @@
     
   
   world:resolve
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/world-instance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  world:instance
 
     
   </span>
@@ -2706,6 +2853,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2834,6 +2989,114 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/gos-inventory-equipped/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.equipped
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-inventory-player-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.player_stats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-inventory-compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.compare
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-inventory-presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.inventory.presentation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/gos-inventory-materials/" class="md-nav__link">
         
   
@@ -2842,6 +3105,643 @@
     
   
   gos.inventory.materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Galactic Trade Network
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Galactic Trade Network
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/gtn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-snapshot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.snapshot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-refresh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.refresh
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-popular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.popular
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-recent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.recent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-favorites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.favorites
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.sort
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.details
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-favorite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.favorite
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.buy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-select-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.select_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-clear-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.clear_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-quote-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.quote_sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-sell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.sell
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-cancel-sale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.cancel_sale
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-claim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.claim
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.command
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-gtn-cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.gtn.cancel
 
     
   </span>
@@ -2889,10 +3789,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -2909,8 +3809,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3066,6 +3966,8 @@
       
         
       
+        
+      
     
     
     
@@ -3076,10 +3978,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -3096,8 +3998,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3356,6 +4258,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/gos-overlay-inventory-marker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.overlay.inventory_marker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/gos-overlay-unit-label/" class="md-nav__link">
         
   
@@ -3446,10 +4375,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
         
           
-          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
             
   
   
@@ -3466,8 +4395,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3753,6 +4682,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3763,10 +4700,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
         
           
-          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
             
   
   
@@ -3783,8 +4720,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4205,6 +5142,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/gos-file-list-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.list_async
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/gos-file-mkdir/" class="md-nav__link">
         
   
@@ -4232,6 +5196,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/symbols/gos-file-operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.operation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/symbols/gos-file-read/" class="md-nav__link">
         
   
@@ -4240,6 +5231,33 @@
     
   
   gos.file.read
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-file-read-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.read_async
 
     
   </span>
@@ -4294,6 +5312,33 @@
     
   
   gos.file.write
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/symbols/gos-file-write-async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  gos.file.write_async
 
     
   </span>
@@ -4667,6 +5712,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-probe-upkeep-fits-in-medicine-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where Probe upkeep fits in Medicine 1.0.1
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#check-ownership-when-reusing-this" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -5020,6 +6076,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-probe-upkeep-fits-in-medicine-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where Probe upkeep fits in Medicine 1.0.1
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#check-ownership-when-reusing-this" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -5046,7 +6113,7 @@
                   
 
 <h1 id="operative-maintain-kolto-probe-stacks">Operative: maintain Kolto Probe stacks<a class="headerlink" href="#operative-maintain-kolto-probe-stacks" title="Permanent link">&para;</a></h1>
-<p>Keep two Kolto Probe stacks on an ally and refresh them before they expire. This helper says whether another Probe is needed. The class script handles urgent healing first and checks whether it can cast.</p>
+<p>Check whether an ally needs another owned Kolto Probe stack or a refresh. This excerpt is a small state check retained in the class module; it does not select patients or submit casts. The full Medicine / Sawbones route applies separate healing priorities before HoT upkeep.</p>
 <p>Source: <code>operative/medicine.lua</code>, in the official Operative / Scoundrel package.</p>
 <div class="admonition note">
 <p class="admonition-title">Code from the class script</p>
@@ -5068,7 +6135,37 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">"healthy"</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kr">end</span>
 </code></pre></div>
-<p><code>build_1</code> and <code>build_2</code> mean a stack is needed. <code>refresh_expiring</code> means the remaining time is below the chosen refresh setting. <code>healthy</code> means no refresh is needed. If the buff cannot be read, <code>observation_unknown</code> stops the helper from repeatedly asking for Probe. A missing timer does not mean the buff has expired.</p>
+<p><code>build_1</code> and <code>build_2</code> mean a stack is needed. <code>refresh_expiring</code> means the remaining time is at or below the chosen refresh setting. <code>healthy</code> means the Probe coverage needs no work; it says nothing about the patient's HP or safety. If the buff cannot be read, <code>observation_unknown</code> stops the helper from repeatedly asking for Probe. A missing timer does not mean the buff has expired.</p>
+<h2 id="where-probe-upkeep-fits-in-medicine-101">Where Probe upkeep fits in Medicine 1.0.1<a class="headerlink" href="#where-probe-upkeep-fits-in-medicine-101" title="Permanent link">&para;</a></h2>
+<p>A refresh being due does not make it the next healing action. The surrounding route decides which patient needs help and whether upkeep should yield.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Before</th>
+<th>Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>An isolated patient needs rescue, including yourself</td>
+<td>Missing Probe setup or HoT upkeep on healthier teammates could postpone direct support.</td>
+<td>Direct support takes priority within the selected healing style's rescue band.</td>
+</tr>
+<tr>
+<td>Several nearby patients are recovering</td>
+<td>Starting fresh HoTs could delay group heals.</td>
+<td>Established HoT upkeep retains its place; Nanotech and Kolto Waves get an opportunity before fresh HoT seeding when their group conditions are met.</td>
+</tr>
+<tr>
+<td>Another patient becomes endangered while maintenance is pending</td>
+<td>An unaccepted off-patient HoT choice could be retried before checking the new urgency.</td>
+<td>Fresh patient needs can replace that unaccepted choice. Already accepted commands keep their ownership.</td>
+</tr>
+</tbody>
+</table>
+<p>The existing rescue bands are Safe 82%, Balanced 80%, and Efficient 66%. An isolated 71% patient with two stable Probe stacks can therefore need direct support in Safe or Balanced even though this helper returns <code>healthy</code>. Efficient retains its lower rescue band. During established nearby group recovery, ordinary HoT upkeep can still run; emergency and urgent-pressure healing keep priority.</p>
+<p>Standing still does not force a cast-time heal. Movement, Tactical Advantage, and observed procs still affect the choice of direct heal. Routine Kolto Waves also needs enough injured allies in its area and an Energy budget for the full channel. These decisions belong to the full route, not this coverage helper.</p>
 <h2 id="check-ownership-when-reusing-this">Check ownership when reusing this<a class="headerlink" href="#check-ownership-when-reusing-this" title="Permanent link">&para;</a></h2>
 <p>The source helper treats <code>mine ~= true</code> as zero owned stacks. It counts a present owned HoT as one stack if the stack count is unknown. Those choices affect when it asks for another Probe; <code>observation_unknown</code> only covers cases where the helper returns nil.</p>
 <p>For a general HoT tracker, require <code>has_ownership</code> before treating a row as foreign and preserve unknown charge counts. <code>mine = false</code> alone does not prove another player owns the HoT.</p>

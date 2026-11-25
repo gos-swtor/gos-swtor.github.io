@@ -24,7 +24,8 @@ Returns the current generation-bound world:
   current_target = GosUnit | nil,
   units = function,
   resolve = function,
-  presence = function
+  presence = function,
+  instance = function
 }
 ```
 

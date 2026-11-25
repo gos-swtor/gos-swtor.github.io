@@ -1,0 +1,31 @@
+# unit:is_group_member
+
+Test whether the unit is a verified group player or companion, including your own.
+
+## Signature
+
+```text
+unit:is_group_member()
+```
+
+## Contract and usage
+
+### `unit:is_group_member()`
+
+Returns `true` for your character and companion and for verified group players
+and their companions. Returns `false` for other units or when group membership
+is unavailable. Call with no arguments.
+
+### Unit Identity And Lifetime
+
+Every `GosUnit` state-reading method raises `stale_unit` after its world
+generation expires. `unit:handle()` is the exception and remains available so
+the unit can be reacquired with a fresh `world:resolve(handle)`.
+
+Within one world, repeated lookups of the same unit compare equal with `==`.
+Values from different generations compare unequal even when their handles
+match.
+
+## Related documentation
+
+[Full world and units contract](../world.md)

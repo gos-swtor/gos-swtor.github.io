@@ -1,8 +1,8 @@
 # API reference
 
-**API version: `1.0.0`**
+**API version: `1.2.0`**
 
-**Source review: 2026-10-21**
+**Source review: 2026-11-20**
 
 Find a callable by namespace or exact name. Each page explains its parameters, return values and usage.
 
@@ -30,12 +30,16 @@ Find a callable by namespace or exact name. Each page explains its parameters, r
 | [`unit:combat_style`](symbols/unit-combat-style.md) | Read a stable lowercase combat-style key, or nil. |
 | [`unit:discipline`](symbols/unit-discipline.md) | Read the observed display discipline, or nil. |
 | [`unit:distance`](symbols/unit-distance.md) | Current distance in game-world units, or nil; multiply by 10 for metres. |
+| [`unit:effective_level`](symbols/unit-effective-level.md) | Read the observed synced or boosted local-player level, or nil when unavailable. |
 | [`unit:handle`](symbols/unit-handle.md) | Get an opaque identity that can be resolved in a fresh world; do not parse it. |
 | [`unit:hp`](symbols/unit-hp.md) | Read observed health and optional percentage, or nil. |
 | [`unit:is_current_target`](symbols/unit-is-current-target.md) | Test whether this current unit is the selected target. |
+| [`unit:is_group_member`](symbols/unit-is-group-member.md) | Test whether the unit is a verified group player or companion, including your own. |
+| [`unit:is_level_shifted`](symbols/unit-is-level-shifted.md) | Read the independent local-player level-shift flag; nil is distinct from false. |
 | [`unit:is_local_player`](symbols/unit-is-local-player.md) | Test whether this current unit is the local player. |
 | [`unit:is_on_screen`](symbols/unit-is-on-screen.md) | Read whether this unit has a current on-screen observation. |
 | [`unit:item_rating`](symbols/unit-item-rating.md) | Read the prepared overall equipped item rating, or nil when unavailable. |
+| [`unit:level`](symbols/unit-level.md) | Read actual local-player character level, or nil; other units currently have no observation. |
 | [`unit:name`](symbols/unit-name.md) | Read the observed display name, or nil. |
 | [`unit:position`](symbols/unit-position.md) | Read game-world coordinates for this observation, or nil. |
 | [`unit:reaction`](symbols/unit-reaction.md) | Read friendly, neutral, hostile or unclassified relationship. |
@@ -47,6 +51,7 @@ Find a callable by namespace or exact name. Each page explains its parameters, r
 | [`unit:toughness`](symbols/unit-toughness.md) | Read the observed toughness label and number, or nil. |
 | [`unit:type`](symbols/unit-type.md) | Read the canonical unit classification, including unknown. |
 | [`unit:velocity`](symbols/unit-velocity.md) | Read available velocity in game-world coordinate units, or nil. |
+| [`world:instance`](symbols/world-instance.md) | Read prepared local instance classification, optional phase identity and difficulty. |
 | [`world:presence`](symbols/world-presence.md) | Read bounded camera-independent character-roster presence; unknown is not absence. |
 | [`world:resolve`](symbols/world-resolve.md) | Resolve an opaque handle in the current world; absent units return nil. |
 | [`world:units`](symbols/world-units.md) | Get currently captured units with strict AND-combined filters. |
@@ -127,6 +132,7 @@ Find a callable by namespace or exact name. Each page explains its parameters, r
 | [`gos.overlay.draw_rectangle`](symbols/gos-overlay-draw-rectangle.md) | Alias draw_rect at a shared screen, world or unit PointSpec. |
 | [`gos.overlay.draw_text`](symbols/gos-overlay-draw-text.md) | Draw text at a shared screen, world or unit PointSpec. |
 | [`gos.overlay.interact`](symbols/gos-overlay-interact.md) | Refresh a screen interaction rectangle and read mouse interaction state. |
+| [`gos.overlay.inventory_marker`](symbols/gos-overlay-inventory-marker.md) | Submit a frame-owned, click-through marker for an exact current carried-bag item. |
 | [`gos.overlay.unit_label`](symbols/gos-overlay-unit-label.md) | Add or refresh a temporary unit-anchored label. |
 | [`gos.overlay.viewport`](symbols/gos-overlay-viewport.md) | Read exact viewport dimensions only when available. |
 
@@ -164,10 +170,14 @@ Find a callable by namespace or exact name. Each page explains its parameters, r
 | [`gos.file.exists`](symbols/gos-file-exists.md) | Test for a regular file in an approved root; a missing file returns false without an error. |
 | [`gos.file.get_from_web_or_local`](symbols/gos-file-get-from-web-or-local.md) | Ensure a local file exists, downloading only on a cache miss; returns a boolean, not contents. |
 | [`gos.file.list`](symbols/gos-file-list.md) | List immediate regular-file names with optional exact extension filtering and truncation reporting. |
+| [`gos.file.list_async`](symbols/gos-file-list-async.md) | Queue a bounded directory listing with explicit completeness. |
 | [`gos.file.mkdir`](symbols/gos-file-mkdir.md) | Create approved directories; false without an error can mean they already exist. |
+| [`gos.file.operation`](symbols/gos-file-operation.md) | Poll owned background storage work and inspect its completion or failure. |
 | [`gos.file.read`](symbols/gos-file-read.md) | Read binary-safe file contents, or nil and an error. |
+| [`gos.file.read_async`](symbols/gos-file-read-async.md) | Queue a bounded binary read without blocking the Lua callback. |
 | [`gos.file.unzip`](symbols/gos-file-unzip.md) | Extract a validated ZIP at load time within sandbox and size limits. |
 | [`gos.file.write`](symbols/gos-file-write.md) | Write or append bytes in approved roots, creating missing parent directories. |
+| [`gos.file.write_async`](symbols/gos-file-write-async.md) | Queue an exclusive or append binary write on the bounded storage worker. |
 | [`gos.import`](symbols/gos-import.md) | Load a sandbox Lua module cached per top-level script environment. |
 | [`import`](symbols/import.md) | Load a sandbox Lua module cached per top-level script environment. |
 | [`require`](symbols/require.md) | Load a sandbox Lua module cached per top-level script environment. |
@@ -178,6 +188,36 @@ Find a callable by namespace or exact name. Each page explains its parameters, r
 
 | Callable | Purpose |
 | --- | --- |
-| [`gos.inventory.bag`](symbols/gos-inventory-bag.md) | Read occupied carried-bag slots and optional item metadata. |
+| [`gos.inventory.bag`](symbols/gos-inventory-bag.md) | Read current carried-bag rows with optional item identity, metadata, stats and equipment facts. |
+| [`gos.inventory.compare`](symbols/gos-inventory-compare.md) | Compare observed bag and equipped item contributions; eligibility and special effects remain separate. |
+| [`gos.inventory.equipped`](symbols/gos-inventory-equipped.md) | Read prepared equipped item rows by physical slot, including their optional metadata and stats. |
 | [`gos.inventory.materials`](symbols/gos-inventory-materials.md) | Read prepared Materials storage totals and available names. |
-| [`gos.inventory.snapshot`](symbols/gos-inventory-snapshot.md) | Read the bag and Materials subtables from one prepared inventory snapshot. |
+| [`gos.inventory.player_stats`](symbols/gos-inventory-player-stats.md) | Read observed player ratings and independently available character-sheet values. |
+| [`gos.inventory.presentation`](symbols/gos-inventory-presentation.md) | Read prepared bag-grid geometry, item cells, identity, visibility and currentness. |
+| [`gos.inventory.snapshot`](symbols/gos-inventory-snapshot.md) | Read bag, Materials, equipment and player stats from one prepared inventory snapshot. |
+
+## Galactic Trade Network
+
+[Shared contracts and examples](gtn.md)
+
+| Callable | Purpose |
+| --- | --- |
+| [`gos.gtn.buy`](symbols/gos-gtn-buy.md) | Queue a bounded purchase from the current quote; poll its command for the actual outcome. |
+| [`gos.gtn.cancel`](symbols/gos-gtn-cancel.md) | Cancel only this script instance's queued GTN command; dispatched work cannot be undone. |
+| [`gos.gtn.cancel_sale`](symbols/gos-gtn-cancel-sale.md) | Queue cancellation of a current personal sale; its returned-item claim is separate. |
+| [`gos.gtn.claim`](symbols/gos-gtn-claim.md) | Queue a current purchased or sold claim and require reconciled completion evidence. |
+| [`gos.gtn.clear_sell`](symbols/gos-gtn-clear-sell.md) | Queue clearing the selected sell slot without canceling an existing order. |
+| [`gos.gtn.command`](symbols/gos-gtn-command.md) | Read this script instance's retained GTN command, selected-stack attribution, native receipt and uncertainty. |
+| [`gos.gtn.details`](symbols/gos-gtn-details.md) | Request a current buy row's purchase quote, price tiers and price history. |
+| [`gos.gtn.favorite`](symbols/gos-gtn-favorite.md) | Toggle a current buy row's favorite membership under client eligibility and limits. |
+| [`gos.gtn.favorites`](symbols/gos-gtn-favorites.md) | Queue the client favorites search into the buy view. |
+| [`gos.gtn.page`](symbols/gos-gtn-page.md) | Queue a stored page change within the selected ready view's current limits. |
+| [`gos.gtn.popular`](symbols/gos-gtn-popular.md) | Queue the client popular-items search into the buy view. |
+| [`gos.gtn.quote_sell`](symbols/gos-gtn-quote-sell.md) | Quote the confirmed selected full stack using current client tax, duration and listing fees. |
+| [`gos.gtn.recent`](symbols/gos-gtn-recent.md) | Queue the client recently-listed search into the buy view. |
+| [`gos.gtn.refresh`](symbols/gos-gtn-refresh.md) | Queue a fresh buy/header capture and restart failed primary catalog capture; catalog completion is separate. |
+| [`gos.gtn.search`](symbols/gos-gtn-search.md) | Queue an eligible search using the current catalog and player filter state. |
+| [`gos.gtn.select_sell`](symbols/gos-gtn-select-sell.md) | Select an exact carried-bag quantity and report the resulting current selected stack while preserving game confirmation. |
+| [`gos.gtn.sell`](symbols/gos-gtn-sell.md) | Queue creation of the exact current sale quote after inventory, wallet and capacity checks. |
+| [`gos.gtn.snapshot`](symbols/gos-gtn-snapshot.md) | Read prepared GTN availability, catalogs, views, current quotes and optional capacity data. |
+| [`gos.gtn.sort`](symbols/gos-gtn-sort.md) | Queue sorting of a ready view; descending=true requests descending order. |

@@ -30,7 +30,7 @@ gos.on_tick(function()
 end)
 ```
 
-Calling `units`, `resolve`, or `presence` on an expired world raises `stale_world`.
+Calling `units`, `resolve`, `presence`, or `instance` on an expired world raises `stale_world`.
 
 ### Unit Identity And Lifetime
 

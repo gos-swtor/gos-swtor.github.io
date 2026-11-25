@@ -14,7 +14,8 @@ Returns the current generation-bound world:
   current_target = GosUnit | nil,
   units = function,
   resolve = function,
-  presence = function
+  presence = function,
+  instance = function
 }
 ```
 
@@ -153,7 +154,7 @@ gos.on_tick(function()
 end)
 ```
 
-Calling `units`, `resolve`, or `presence` on an expired world raises `stale_world`.
+Calling `units`, `resolve`, `presence`, or `instance` on an expired world raises `stale_world`.
 
 ### `world:presence(handle)`
 
@@ -185,11 +186,97 @@ revision are not independent disappearance observations. `sample_ms` is the
 monotonic capture timestamp in milliseconds, omitted before any capture.
 Retain the session with a saved handle and reject old-session evidence.
 
+### `world:instance()`
+
+Reads the prepared local player's instance context. It performs no new game
+query. Acquire a fresh world inside the current callback; an expired world
+raises `stale_world`.
+
+```text
+{
+  status = "pending" | "ready" | "unavailable",
+  revision = integer | nil,
+  sampled_ms = integer | nil,
+  kind = "flashpoint" | "arena" | "warzone" | "other" | "none" | nil,
+  handle = "phase:..." | nil,
+  difficulty = string | nil
+}
+```
+
+`kind`, `handle`, and `difficulty` are available only for a ready observation.
+The classification gives arena precedence over warzone, then flashpoint. A
+King of the Hill context is classified as `warzone`. A known phase without one
+of those classifications is `other`; `other` does not identify an Operation.
+`none` is the ready observation of no active phase, not an unavailable result.
+
+The optional handle identifies a phase, and cannot be passed to `world:resolve`
+as a unit handle. Difficulty preserves an observed client name such as
+`phsFlashpointDifficultyNormal`, `phsFlashpointDifficultyHard`,
+`phsFlashpointDifficultySolo`, `phsFlashpointDifficultyOnlySolo`,
+`phsFlashpointDifficultyMaster`, or `phsFlashpointDifficultyNone`; omitted means
+unavailable, not a guessed difficulty.
+
+`revision` tracks changes to the captured local level/instance context.
+`sampled_ms` is the prepared player-stat sampling timestamp in monotonic
+milliseconds. Both may be present on a pending/unavailable observation, and
+neither makes the missing classification ready. Without a matching prepared
+local-player snapshot the result contains only `status = "unavailable"`.
+
+```lua
+gos.on_tick(function()
+  local world = gos.world()
+  local instance = world:instance()
+  if instance.status ~= "ready" then return end
+  if instance.kind == "flashpoint" then
+    -- Use the observed context; difficulty may still be nil.
+  end
+end)
+```
+
 ### `unit:item_rating()`
 
 Returns the unit's overall equipped item rating as an integer, or `nil` when
 unavailable. This is distinct from character level and an inventory item's
 rating. Local and other captured units use the same prepared observation.
+
+### `unit:level()`
+
+Returns the actual character level as an integer, or `nil` when unavailable.
+The current implementation captures this for the local player only. Other
+units return `nil`; it does not infer their level from item rating, HP, or the
+selected target. The current prepared inventory context must match the player.
+
+Use actual level for an observed character-level requirement. It is separate
+from [item and equipment observations](inventory.md). The usual current-unit
+lifetime applies: an expired unit raises `stale_unit`.
+
+### `unit:effective_level()`
+
+Returns the observed synced or boosted character level as an integer, or `nil`.
+It uses the matching prepared local-player context and is currently unavailable
+for other units. Effective level is separate from actual level and does not
+establish whether an inventory item can be equipped. Unknown observations stay
+`nil`; they do not reuse the actual level. An expired unit raises `stale_unit`.
+
+### `unit:is_level_shifted()`
+
+Returns the observed level-shift flag as `true`, `false`, or `nil` when the
+matching local-player observation is unavailable. Other units currently return
+`nil`. Check explicitly for `nil` before treating `false` as a known result.
+Equal actual and effective levels do not prove `false`: this method reports the
+observed flag independently. An expired unit raises `stale_unit`.
+
+```lua
+gos.on_tick(function()
+  local player = gos.world().player
+  if not player then return end
+  local actual = player:level()
+  local effective = player:effective_level()
+  local shifted = player:is_level_shifted()
+  if actual == nil or effective == nil or shifted == nil then return end
+  -- All three values are observed, including shifted == false.
+end)
+```
 
 ### `gos.target.select(unit, target_intent?)`
 
@@ -405,6 +492,12 @@ no recognized toughness value is available.
 ### `unit:is_local_player()`
 
 Returns whether this current unit is the local player.
+
+### `unit:is_group_member()`
+
+Returns `true` for your character and companion and for verified group players
+and their companions. Returns `false` for other units or when group membership
+is unavailable. Call with no arguments.
 
 ### `unit:is_current_target()`
 

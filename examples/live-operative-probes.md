@@ -1,10 +1,10 @@
 ---
 title: Operative Medicine Lua Healing - Kolto Probe Stacks
-description: Read the Operative Medicine routine's Lua helper for maintaining two Kolto Probe stacks and refreshing them before expiry while preserving healing priorities.
+description: Inspect Kolto Probe stacks and refresh timing, and see when Operative Medicine prioritizes patient rescue over HoT upkeep.
 ---
 # Operative: maintain Kolto Probe stacks
 
-Keep two Kolto Probe stacks on an ally and refresh them before they expire. This helper says whether another Probe is needed. The class script handles urgent healing first and checks whether it can cast.
+Check whether an ally needs another owned Kolto Probe stack or a refresh. This excerpt is a small state check retained in the class module; it does not select patients or submit casts. The full Medicine / Sawbones route applies separate healing priorities before HoT upkeep.
 
 Source: `operative/medicine.lua`, in the official Operative / Scoundrel package.
 
@@ -30,7 +30,21 @@ local function kolto_probe_needs_refresh(unit, policy)
 end
 ```
 
-`build_1` and `build_2` mean a stack is needed. `refresh_expiring` means the remaining time is below the chosen refresh setting. `healthy` means no refresh is needed. If the buff cannot be read, `observation_unknown` stops the helper from repeatedly asking for Probe. A missing timer does not mean the buff has expired.
+`build_1` and `build_2` mean a stack is needed. `refresh_expiring` means the remaining time is at or below the chosen refresh setting. `healthy` means the Probe coverage needs no work; it says nothing about the patient's HP or safety. If the buff cannot be read, `observation_unknown` stops the helper from repeatedly asking for Probe. A missing timer does not mean the buff has expired.
+
+## Where Probe upkeep fits in Medicine 1.0.1
+
+A refresh being due does not make it the next healing action. The surrounding route decides which patient needs help and whether upkeep should yield.
+
+| Situation | Before | Now |
+| --- | --- | --- |
+| An isolated patient needs rescue, including yourself | Missing Probe setup or HoT upkeep on healthier teammates could postpone direct support. | Direct support takes priority within the selected healing style's rescue band. |
+| Several nearby patients are recovering | Starting fresh HoTs could delay group heals. | Established HoT upkeep retains its place; Nanotech and Kolto Waves get an opportunity before fresh HoT seeding when their group conditions are met. |
+| Another patient becomes endangered while maintenance is pending | An unaccepted off-patient HoT choice could be retried before checking the new urgency. | Fresh patient needs can replace that unaccepted choice. Already accepted commands keep their ownership. |
+
+The existing rescue bands are Safe 82%, Balanced 80%, and Efficient 66%. An isolated 71% patient with two stable Probe stacks can therefore need direct support in Safe or Balanced even though this helper returns `healthy`. Efficient retains its lower rescue band. During established nearby group recovery, ordinary HoT upkeep can still run; emergency and urgent-pressure healing keep priority.
+
+Standing still does not force a cast-time heal. Movement, Tactical Advantage, and observed procs still affect the choice of direct heal. Routine Kolto Waves also needs enough injured allies in its area and an Energy budget for the full channel. These decisions belong to the full route, not this coverage helper.
 
 ## Check ownership when reusing this
 
